@@ -1,0 +1,14 @@
+Aquí van los scripts que Godot carga al iniciar el juego y que nunca mueren, sin importar si cambias de nivel o si el personaje muere. En otros motores se les llama "Singletons". 
+
+pones aquí scripts para:
+
+GameManager.gd: Para llevar la cuenta de la puntuación global, las vidas restantes y en qué nivel van.
+
+MusicController.gd: Como es un juego de ritmo, la música no puede cortarse si reinicias el nivel. Debe haber un "DJ invisible" que controle el audio desde aquí para que suene continuo.
+
+TransitionLayer.gd: Para hacer los fundidos a negro al cambiar de pantalla.
+
+Regla: "Si necesitas una variable que sobreviva al cambio de escena, el script va aquí."
+
+
+Efectivamente, Gemini me carreó el orden de las carpetas xddd

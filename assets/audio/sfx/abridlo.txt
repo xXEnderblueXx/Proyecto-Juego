@@ -1,0 +1,9 @@
+(Efectos de Sonido)
+
+¿Qué va aquí? Sonidos cortos y puntuales: golpes, pasos, clics de botones.
+
+Formato RECOMENDADO: .wav.
+
+¿Por qué? Sonidos sin compresión que la CPU lee rapidísimo.
+
+Ejemplos: golpe_tambor.wav, salto.wav, ui_click.wav.

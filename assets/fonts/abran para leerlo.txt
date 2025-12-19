@@ -1,0 +1,5 @@
+¿Qué va aquí? Los archivos de fuente para que los textos del juego no se vean genéricos.
+
+Formatos: .ttf (TrueType) o .otf (OpenType).
+
+Ejemplos: fuente_gotica_yare.ttf, pixel_font.ttf.

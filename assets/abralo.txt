@@ -1,0 +1,1 @@
+Aquí SOLO van archivos "crudos" (imágenes, sonidos, fuentes). NUNCA guardes aquí escenas (.tscn) ni scripts (.gd o .cpp). Ud usará las carpetas que le dejé ahí (Si es necesario crear otra hágalo pero mantenga un orden porfa, en esas carpetas está otros .txt explicándole para qué sirven)

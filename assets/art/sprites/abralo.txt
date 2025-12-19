@@ -1,0 +1,13 @@
+¿Qué va aquí? Personajes, enemigos, proyectiles, objetos interactivos (monedas, palancas) y efectos visuales (explosiones).
+
+Formatos: .png (siempre con fondo transparente).
+
+Ejemplos:
+
+diablo_caminando.png (Hoja de sprites / Spritesheet).
+
+jugador_ataque.png.
+
+particula_fuego.png.
+
+Nota: Si usas Pixel Art, acuérdate de guardar las imágenes con las dimensiones exactas, sin espacios gigantes vacíos alrededor.

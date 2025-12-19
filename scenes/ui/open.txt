@@ -1,0 +1,11 @@
+Todo lo que es Control y Menús. Estas escenas suelen tener nodos de color verde (Control).
+
+¿Qué va aquí? Menús, HUD (Heads-Up Display), ventanas de diálogo, pantalla de Game Over.
+
+Ejemplos:
+
+menu_principal.tscn.
+
+hud_ritmo.tscn (Donde salen los circulos como los de osu taiko).
+
+menu_pausa.tscn.

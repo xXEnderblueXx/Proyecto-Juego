@@ -1,0 +1,19 @@
+Aquí van los planos (Blueprints) de todo ser vivo o entidad que se mueva. En otros motores esto se llama "Prefabs".
+
+¿Qué va aquí? Escenas pequeñas e independientes que contienen al personaje, su sprite, su caja de colisión y su lógica.
+
+Flujo de Trabajo: Tu compañero crea aquí al "Diablo", lo configura una sola vez, y luego lo arrastra 50 veces dentro del Nivel 1. Si cambia algo aquí (ej: le sube la velocidad), se actualiza en todos los niveles.
+
+Conexión con C++ (TU PARTE):
+
+Probablemente la Raíz de estas escenas tenga adjunto tu script de C++.
+
+Ejemplo: La escena DiabloRojo.tscn tendrá un nodo raíz que usa tu clase EnemyAI (hecha en C++).
+
+Ejemplos:
+
+player_promesero.tscn.
+
+diablo_raso.tscn.
+
+diablo_capataz.tscn.

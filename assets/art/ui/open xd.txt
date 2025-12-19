@@ -1,0 +1,13 @@
+¿Qué va aquí? Todo lo que se "pega" a la pantalla y no es parte del mundo del juego. Botones, barras de vida, iconos, bordes de menús, el cursor del mouse.
+
+Importante: Estos gráficos suelen necesitar alta calidad porque siempre están en primer plano.
+
+Ejemplos:
+
+barra_vida_vacia.png y barra_vida_llena.png.
+
+boton_play_normal.png y boton_play_presionado.png.
+
+icono_pausa.png.
+
+indicador_ritmo.png (círculos del juego de ritmo).

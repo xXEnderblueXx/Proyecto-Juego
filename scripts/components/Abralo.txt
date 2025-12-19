@@ -1,0 +1,21 @@
+Esta es la forma moderna de programar en Godot (Composición). En lugar de escribir un código gigante para el "Diablo Mayor" y otro código gigante para el "Promesero", creas piezas pequeñas reutilizables.
+
+¿Para qué la usarán en este juego? Imagina que tanto el Jugador como los Enemigos tienen vida y pueden recibir daño.
+
+La forma antigua: Escribir código de vida en el script del Jugador y repetir lo mismo en el del Enemigo.
+
+// Lo importante
+
+La forma components: Tu creas un script HealthComponent.gd.
+
+Si quieres que el Diablo tenga vida, le arrastras este componente.
+
+Si quiere que una pared destructible tenga vida, le arrastra este mismo componente.
+
+Ejemplos:
+
+RhythmReceiver.gd: Un componente que se le pone a cualquier cosa que deba "bailar" o moverse con el beat.
+
+HitboxComponent.gd: Para detectar golpes.
+
+Regla: "Si es una mecánica que van a usar varios objetos diferentes (vida, movimiento, ritmo), haz un componente aquí y reutilízalo."

@@ -1,0 +1,19 @@
+¿Qué va aquí? Los archivos .tscn que representan un nivel completo.
+
+¿Qué contienen?
+
+El fondo (Background) arrastrado desde assets.
+
+El suelo y las paredes (Tilemaps).
+
+La música de fondo configurada.
+
+Los puntos de aparición (Spawns) de los enemigos.
+
+Ejemplos:
+
+nivel_1_pueblo.tscn (El inicio en las calles de Yare).
+
+nivel_2_iglesia.tscn.
+
+boss_fight_capataz.tscn.

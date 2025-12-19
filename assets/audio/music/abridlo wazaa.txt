@@ -1,0 +1,9 @@
+(Música de Fondo / BGM)
+
+¿Qué va aquí? Canciones largas que suenan en bucle (loop).
+
+Formato OBLIGATORIO: .ogg (Ogg Vorbis).
+
+¿Por qué? Porque el .mp3 añade un pequeño silencio al inicio que rompe el loop perfecto, y el .wav pesa demasiado para canciones largas. El .ogg es perfecto para loops.
+
+Ejemplos: tema_pueblo.ogg, boss_battle_loop.ogg.

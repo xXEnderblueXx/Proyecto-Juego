@@ -1,0 +1,9 @@
+Para cosas que no son personajes pero tampoco son parte del suelo estático.
+
+¿Qué va aquí? Proyectiles, monedas, trampas, maracas lanzables.
+
+Ejemplos:
+
+nota_musical.tscn (La flecha que cae).
+
+efecto_golpe.tscn.

@@ -1,0 +1,15 @@
+¿Qué va aquí? Todo lo que está detrás de la acción y no interactúa directamente (o son paredes estáticas).
+
+Sub-tipos:
+
+Fondos Parallax: Las capas del cielo, montañas lejanas, nubes (imágenes grandes que se repiten).
+
+Tilemaps: Las "hojas de baldosas" con los bloques de suelo, tierra, grama y muros del pueblo de Yare.
+
+Ejemplos:
+
+cielo_atardecer.png.
+
+iglesia_yare_fondo.png.
+
+tileset_pueblo.png (La cuadrícula con los trozos de suelo).

@@ -1,0 +1,38 @@
+=== Parte de Angel
+
+Nadie más debe tocar esto. Si Jesus o Jhoscy entran aquí por error o me cambian algo, pueden romperme  el compilador que me costó instalar XD
+
+ src/: Aquí escribo el código C++ (.cpp, .h). 
+
+ bin/: Aquí aparecen los DLLs mágicos. Jesus y Jhoscy solo "usan" lo que hay aquí, pero nunca lo van a modificar manualmente.
+
+ godot_cpp/: La librería base. Esto lo actualizo yo
+
+ SConstruct y JuegoYare.gdextension: Configuración de todo el compilador y juego, esto lo edito yo nada más
+
+
+=== parte de Jhoscy
+
+assets/:
+
+sube aquí los dibujos, la música (Aunque sobre esa música, la podemos hacer entre los 3) y los sonidos (También podemos ayudarte con los sonidos, yo tengo una serie de ellos que horita vemos si sirven o no)
+
+¿Quien usará lo que está aquí?: Jesús. Él entra aquí solo para copiar esos dibujos a las escenas, pero no debería subir archivos ni borrarlos.
+
+
+=== Parte de Jesus
+Aquí es donde se crea "el juego" visualmente.
+
+ scenes/:
+
+ Aquí se arma los niveles, se crean los menús y junta todo.
+
+ Jhoscy puede entrar aquí para ajustar una animación que se vea rara o cambiar el color de una luz, pero siempre avisando a Jesús
+
+Angel, rara vez entraré aquí, a menos que necesite "debuggear" por qué tu código C++ no conecta con el nodo.
+
+ scripts/:
+
+Jesús, Aquí escribe la lógica del juego en GDScript (conectar señales, cambiar de nivel, tal).
+
+Jhoscy, si crees no necesitar ayuda o decirselo a Jesús, aquí puedes tocar scripts sencillos (ej: hacer que un sprite parpadee o rote).

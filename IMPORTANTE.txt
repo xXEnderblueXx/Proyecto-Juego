@@ -36,3 +36,8 @@ Angel, rara vez entraré aquí, a menos que necesite "debuggear" por qué tu có
 Jesús, Aquí escribe la lógica del juego en GDScript (conectar señales, cambiar de nivel, tal).
 
 Jhoscy, si crees no necesitar ayuda o decirselo a Jesús, aquí puedes tocar scripts sencillos (ej: hacer que un sprite parpadee o rote).
+
+
+ZONA donde los 3 podemos trabajar uwu
+
+ project.godot: Este archivo ni se les ocurra borrarlo que se nos va a la mrd todo el Godor de los 3, aquí, con la configuración del editor. Cualquiera puede cambiarla (ej: Jesús cambia la resolución de pantalla, Jhoscy cambia el filtro de texturas, Yo cambia la capa de físicas), pero con cuidado, avisen siempre cuando toquen algo aquí porque como se dañe nos tiramos del puente del viaducto viejo

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://nw36i6aw32y5"]
+
+[ext_resource type="Texture2D" uid="uid://dehyroj865ov3" path="res://scenes/levels/dieguito sprite civil.png" id="1_5l4cv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
+size = Vector2(136, 55)
+
+[node name="PlayerCharacter" type="PlayerCharacter"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5l4cv")
+hframes = 4
+vframes = 5
+region_enabled = true
+region_rect = Rect2(381.5, 144.04828, 3323.06, 5712.2725)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-298, -33.5)
+shape = SubResource("RectangleShape2D_3hfu2")

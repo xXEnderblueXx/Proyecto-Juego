@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df5d21mmdgphy"
-path="res://.godot/imported/Oak_Tree_Small.png-ffa2cef89ffed4b13edaec1105f10073.ctex"
+path="res://.godot/imported/Oak_Tree_Small.png-815392bd32da6379f8f41053d6433e6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cute_Fantasy_Free/Outdoor decoration/Oak_Tree_Small.png"
-dest_files=["res://.godot/imported/Oak_Tree_Small.png-ffa2cef89ffed4b13edaec1105f10073.ctex"]
+source_file="res://assets/art/backgrounds/Recursos/Outdoor decoration/Oak_Tree_Small.png"
+dest_files=["res://.godot/imported/Oak_Tree_Small.png-815392bd32da6379f8f41053d6433e6e.ctex"]
 
 [params]
 

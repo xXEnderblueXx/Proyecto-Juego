@@ -1,11 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://nw36i6aw32y5"]
+[gd_scene load_steps=6 format=3 uid="uid://nw36i6aw32y5"]
 
 [ext_resource type="Texture2D" uid="uid://dehyroj865ov3" path="res://scenes/levels/dieguito sprite civil.png" id="1_5l4cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
 size = Vector2(136, 55)
 
+[sub_resource type="Animation" id="Animation_5l4cv"]
+resource_name = "idle_front"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_3hfu2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjudt"]
+_data = {
+&"RESET": SubResource("Animation_3hfu2"),
+&"idle_front": SubResource("Animation_5l4cv")
+}
+
 [node name="PlayerCharacter" type="PlayerCharacter"]
+position = Vector2(300, 20)
+scale = Vector2(0.07, 0.07)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5l4cv")
@@ -17,3 +56,13 @@ region_rect = Rect2(381.5, 144.04828, 3323.06, 5712.2725)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-298, -33.5)
 shape = SubResource("RectangleShape2D_3hfu2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-288, -237)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mjudt")
+}

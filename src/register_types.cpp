@@ -1,17 +1,17 @@
 #include "register_types.h"
-#include "rhythm_conductor.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
+#include "player_character.h"
 using namespace godot;
 
 void initialize_juego_module(ModuleInitializationLevel p_level) {
     if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
         return;
     }
-    ClassDB::register_class<RhythmConductor>();
+    ClassDB::register_class<PlayerCharacter>();
 }
 
 void uninitialize_juego_module(ModuleInitializationLevel p_level) {

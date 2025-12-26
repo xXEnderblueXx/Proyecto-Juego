@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://df0n44qvvagtn"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://bdm5xaph5ecyr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_42xju"]
 load_path = "res://.godot/imported/Grass_Middle.png-f9b52556e07de950d5a1010b9ef59484.ctex"

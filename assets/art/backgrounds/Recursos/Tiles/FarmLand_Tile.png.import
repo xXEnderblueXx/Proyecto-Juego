@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bep4630au3qqo"
-path="res://.godot/imported/FarmLand_Tile.png-3e9bb70aac09ce7a453c7afb8bea5ea8.ctex"
+path="res://.godot/imported/FarmLand_Tile.png-3476139ae7cc4bf3d98ab986485ae231.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cute_Fantasy_Free/Tiles/FarmLand_Tile.png"
-dest_files=["res://.godot/imported/FarmLand_Tile.png-3e9bb70aac09ce7a453c7afb8bea5ea8.ctex"]
+source_file="res://assets/art/backgrounds/Recursos/Tiles/FarmLand_Tile.png"
+dest_files=["res://.godot/imported/FarmLand_Tile.png-3476139ae7cc4bf3d98ab986485ae231.ctex"]
 
 [params]
 

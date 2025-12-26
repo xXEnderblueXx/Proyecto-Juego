@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciol5ksrvpwrk"
-path="res://.godot/imported/Sheep.png-7320b7a3392161505bfa4c0ff7ac7332.ctex"
+path="res://.godot/imported/Sheep.png-738c9456297781a14b37206d375c3405.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cute_Fantasy_Free/Animals/Sheep/Sheep.png"
-dest_files=["res://.godot/imported/Sheep.png-7320b7a3392161505bfa4c0ff7ac7332.ctex"]
+source_file="res://assets/art/backgrounds/Recursos/Animals/Sheep/Sheep.png"
+dest_files=["res://.godot/imported/Sheep.png-738c9456297781a14b37206d375c3405.ctex"]
 
 [params]
 

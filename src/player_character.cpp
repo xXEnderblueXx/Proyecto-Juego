@@ -23,24 +23,33 @@ void PlayerCharacter::_physics_process(double delta) {
     if (Engine::get_singleton()->is_editor_hint()) return;
 
     Input* input = Input::get_singleton();
-    Vector2 input_vector = Vector2(0, 0);
+    Vector2 direction = Vector2(0, 0);
 
-    // Detectar teclas (WASD o Flechas) Voy a ver si proximamente le meto soporte para gamepad
-    // "ui_right", "ui_left", etc. son acciones estándar de Godot
-    input_vector.x = input->get_action_strength("ui_right") - input->get_action_strength("ui_left");
-    input_vector.y = input->get_action_strength("ui_down") - input->get_action_strength("ui_up");
-
-    // Normalizar vector: Esto evita que correr en diagonal sea más rápido
-    if (input_vector.length() > 0) {
-        input_vector = input_vector.normalized();
+    // 4 direcciones (Cruz)
+    // Con if eso amarra mejor
+    // Aquí: Derecha > Izquierda > Arriba > Abajo 
+    
+    if (input->is_action_pressed("ui_right")) {
+        direction.x = 1;
+    }
+    else if (input->is_action_pressed("ui_left")) {
+        direction.x = -1;
+    }
+    else if (input->is_action_pressed("ui_up")) {
+        direction.y = -1; // Y negativo es arriba
+    }
+    else if (input->is_action_pressed("ui_down")) {
+        direction.y = 1;
     }
 
-    // Aplicar la velocidad
-    set_velocity(input_vector * move_speed);
-    
-    // Mover y deslizarse (maneja las colisiones automáticamente)
-    move_and_slide();
+    //  Al usar "else if", si mantienes W y D al mismo tiempo,
+    // el personaje se movera a la derecha (porque es el primer if) y ignorará la W.
+    // Nunca se moverá en diagonal boooomb waza me voy al lol
 
+    // Aplicar velocidad (usando la variable 'move_speed') para mover al personaje
+    set_velocity(direction * move_speed); 
+    
+    move_and_slide();
 }
 
 // Getters y Setters

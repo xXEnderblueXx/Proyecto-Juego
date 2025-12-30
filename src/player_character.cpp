@@ -5,7 +5,7 @@
 using namespace godot;
 
 PlayerCharacter::PlayerCharacter() {
-    move_speed = 200.0; // Velocidad inicial (Ajusten esto en el godot por si es muy rapido o lento)
+    move_speed = 50.0; // Velocidad inicial (Ajusten esto en el godot por si es muy rapido o lento)
     last_direction = Vector2(0, 1); // Mirando hacia abajo al inicio 
 }
 

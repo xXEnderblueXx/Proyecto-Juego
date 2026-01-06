@@ -1,16 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs4o10qjkjgng"]
+[gd_scene load_steps=12 format=3 uid="uid://bs4o10qjkjgng"]
+
+[ext_resource type="FontFile" uid="uid://fgtof7nhypca" path="res://assets/fonts/PixeloidMono.otf" id="1_hdj2u"]
+[ext_resource type="Script" uid="uid://c76m18ho2pg8s" path="res://scenes/ui/menu_ui.gd" id="1_n3mna"]
+[ext_resource type="Texture2D" uid="uid://d0ycw4blg71cp" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_0.png" id="3_0c7tf"]
+[ext_resource type="Script" uid="uid://jdmvixjatgbw" path="res://scenes/ui/parallax_background.gd" id="3_raexy"]
+[ext_resource type="Texture2D" uid="uid://df7rpafb5h86t" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_1.png" id="4_raexy"]
+[ext_resource type="Texture2D" uid="uid://dog4uw6g811cr" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_2.png" id="5_ix7d4"]
+[ext_resource type="Texture2D" uid="uid://d0xbiq56pvp2b" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_3.png" id="6_5jvfg"]
+[ext_resource type="Texture2D" uid="uid://cgr7n6yvb74dt" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_4.png" id="7_btka8"]
+[ext_resource type="Texture2D" uid="uid://bk0t2k0pxxbd7" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_5.png" id="8_levpg"]
+[ext_resource type="Texture2D" uid="uid://c1uxdkv8hj8ky" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_6.png" id="9_m4a6v"]
 
 [sub_resource type="Theme" id="Theme_n3mna"]
+Label/font_sizes/font_size = 41
+Label/fonts/font = ExtResource("1_hdj2u")
 
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n3mna")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -20,21 +32,114 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_n3mna")
-color = Color(0.42776093, 0.27288428, 0.17131129, 1)
+color = Color(0.42745098, 0.27450982, 0.17254902, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.38900003
-anchor_top = 0.6234568
-anchor_right = 0.6579861
-anchor_bottom = 0.85200006
-offset_left = -0.12802124
-offset_bottom = -0.0960083
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Yare xdddddddd zzzzzzz
+waaazaaaaaaaaaaaaaaaa"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="inicio" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
 text = "inicio"
+
+[node name="opciones" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Opciones"
+
+[node name="salir" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="FullScream_changed" type="Button" parent="ColorRect/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "FullScream"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(526, 330)
+scale = Vector2(2.2, 2.2)
+transform = Transform2D(2.2, 0, 0, 2.2, 526, 330)
+scroll_offset = Vector2(1, 0)
+script = ExtResource("3_raexy")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("9_m4a6v")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("8_levpg")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.4, 1.4)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("7_btka8")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.6, 1.6)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("6_5jvfg")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.8, 1.8)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("5_ix7d4")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource("4_raexy")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2.2, 2.2)
+motion_mirroring = Vector2(564, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+texture = ExtResource("3_0c7tf")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/salir" to="." method="_on_salir_pressed"]

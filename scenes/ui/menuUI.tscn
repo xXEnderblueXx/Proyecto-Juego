@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs4o10qjkjgng"]
+
+[sub_resource type="Theme" id="Theme_n3mna"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n3mna")
+color = Color(0.42776093, 0.27288428, 0.17131129, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38900003
+anchor_top = 0.6234568
+anchor_right = 0.6579861
+anchor_bottom = 0.85200006
+offset_left = -0.12802124
+offset_bottom = -0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "inicio"

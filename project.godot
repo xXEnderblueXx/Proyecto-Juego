@@ -13,6 +13,10 @@ config_version=5
 config/name="JuegoYare"
 config/features=PackedStringArray("4.5")
 
+[gui]
+
+theme/custom="uid://bhehbijodln4u"
+
 [input]
 
 ui_left={

@@ -746,4 +746,5 @@ tile_map_data = PackedByteArray("AAAsABEAAAABAAcAAAAsABIAAAABAAgAAAAsABMAAAABAAk
 tile_set = SubResource("TileSet_3hoed")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("22_ums10")]
+move_speed = 80.0
 position = Vector2(503, 465)

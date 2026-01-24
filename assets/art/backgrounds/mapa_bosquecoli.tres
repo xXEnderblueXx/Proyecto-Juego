@@ -1,20 +1,20 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://brwnuvs307nbo"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bjlvquyeb2o4a"]
 
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_m5moq"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_x16qe"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_urmu4"]
-[ext_resource type="Texture2D" uid="uid://dsbgdehsdt6v4" path="res://assets/art/backgrounds/Tiles/BALDOSA PARA IGLESIA JUEGO1.png" id="4_6ynhi"]
+[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_ixj0t"]
+[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_qv7n8"]
+[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_6m6fn"]
+[ext_resource type="Texture2D" uid="uid://dsbgdehsdt6v4" path="res://assets/art/backgrounds/Tiles/BALDOSA PARA IGLESIA JUEGO1.png" id="4_dcny1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3xqg"]
-texture = ExtResource("1_m5moq")
+texture = ExtResource("1_ixj0t")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwbrb"]
-texture = ExtResource("2_x16qe")
+texture = ExtResource("2_qv7n8")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ung1v"]
-texture = ExtResource("3_urmu4")
+texture = ExtResource("3_6m6fn")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -33,7 +33,7 @@ texture = ExtResource("3_urmu4")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gy5xr"]
-texture = ExtResource("4_6ynhi")
+texture = ExtResource("4_dcny1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

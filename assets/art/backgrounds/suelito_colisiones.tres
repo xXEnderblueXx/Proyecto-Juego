@@ -1,16 +1,16 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://ron2gplbdec2"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://celhc67k6q740"]
 
-[ext_resource type="Texture2D" uid="uid://733dg73dmbh5" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_2c3av"]
-[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_rmff3"]
-[ext_resource type="Texture2D" uid="uid://56x5i4vlo26d" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="3_du8gp"]
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="4_nxcxq"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="5_v07oq"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_uaisk"]
-[ext_resource type="Texture2D" uid="uid://r8rdwg5wrm0o" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="7_ovgus"]
-[ext_resource type="Texture2D" uid="uid://dtgyyl8aoqg7p" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="8_oenal"]
+[ext_resource type="Texture2D" uid="uid://733dg73dmbh5" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_er0e4"]
+[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_0tfnk"]
+[ext_resource type="Texture2D" uid="uid://56x5i4vlo26d" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="3_yrv3j"]
+[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="4_vk7qx"]
+[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="5_ikdek"]
+[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_h7rj6"]
+[ext_resource type="Texture2D" uid="uid://r8rdwg5wrm0o" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="7_k6oy7"]
+[ext_resource type="Texture2D" uid="uid://dtgyyl8aoqg7p" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="8_a3kwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0yjt"]
-texture = ExtResource("1_2c3av")
+texture = ExtResource("1_er0e4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -26,7 +26,7 @@ texture = ExtResource("1_2c3av")
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qljuc"]
-texture = ExtResource("2_rmff3")
+texture = ExtResource("2_0tfnk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -45,7 +45,7 @@ texture = ExtResource("2_rmff3")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4le6y"]
-texture = ExtResource("3_du8gp")
+texture = ExtResource("3_yrv3j")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -57,15 +57,15 @@ texture = ExtResource("3_du8gp")
 2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5645l"]
-texture = ExtResource("4_nxcxq")
+texture = ExtResource("4_vk7qx")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8acpg"]
-texture = ExtResource("5_v07oq")
+texture = ExtResource("5_ikdek")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cela6"]
-texture = ExtResource("6_uaisk")
+texture = ExtResource("6_h7rj6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -84,12 +84,12 @@ texture = ExtResource("6_uaisk")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qaggl"]
-texture = ExtResource("7_ovgus")
+texture = ExtResource("7_k6oy7")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7awl6"]
-texture = ExtResource("8_oenal")
+texture = ExtResource("8_a3kwc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

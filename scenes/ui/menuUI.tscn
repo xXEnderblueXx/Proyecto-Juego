@@ -1,145 +1,227 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs4o10qjkjgng"]
+[gd_scene load_steps=19 format=3 uid="uid://bs4o10qjkjgng"]
 
-[ext_resource type="FontFile" uid="uid://fgtof7nhypca" path="res://assets/fonts/PixeloidMono.otf" id="1_hdj2u"]
 [ext_resource type="Script" uid="uid://c76m18ho2pg8s" path="res://scenes/ui/menu_ui.gd" id="1_n3mna"]
-[ext_resource type="Texture2D" uid="uid://d0ycw4blg71cp" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_0.png" id="3_0c7tf"]
+[ext_resource type="Texture2D" uid="uid://b14r7qmp14vba" path="res://assets/art/ui/buttons/no05.png" id="2_m4a6v"]
+[ext_resource type="Texture2D" uid="uid://cyh3xdfnsdipd" path="res://assets/art/ui/buttons/no03.png" id="3_eikmy"]
 [ext_resource type="Script" uid="uid://jdmvixjatgbw" path="res://scenes/ui/parallax_background.gd" id="3_raexy"]
-[ext_resource type="Texture2D" uid="uid://df7rpafb5h86t" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_1.png" id="4_raexy"]
-[ext_resource type="Texture2D" uid="uid://dog4uw6g811cr" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_2.png" id="5_ix7d4"]
-[ext_resource type="Texture2D" uid="uid://d0xbiq56pvp2b" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_3.png" id="6_5jvfg"]
-[ext_resource type="Texture2D" uid="uid://cgr7n6yvb74dt" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_4.png" id="7_btka8"]
-[ext_resource type="Texture2D" uid="uid://bk0t2k0pxxbd7" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_5.png" id="8_levpg"]
-[ext_resource type="Texture2D" uid="uid://c1uxdkv8hj8ky" path="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_6.png" id="9_m4a6v"]
+[ext_resource type="Texture2D" uid="uid://b0e8fct1tbbp2" path="res://assets/art/ui/buttons/no02.png" id="4_eqd1q"]
+[ext_resource type="Texture2D" uid="uid://biwg27nykaju6" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0009_2.png" id="5_btka8"]
+[ext_resource type="Texture2D" uid="uid://gmn10s5n2qt4" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0008_3.png" id="6_levpg"]
+[ext_resource type="Texture2D" uid="uid://djdynnrmqb2gp" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0007_Lights.png" id="7_m4a6v"]
+[ext_resource type="Texture2D" uid="uid://bk7grvaig5j3y" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0006_4.png" id="8_eikmy"]
+[ext_resource type="Texture2D" uid="uid://i4ic43xtis0g" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0005_5.png" id="9_eqd1q"]
+[ext_resource type="Texture2D" uid="uid://bv58wm1t7uuho" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0004_Lights.png" id="10_l4wmq"]
+[ext_resource type="Texture2D" uid="uid://b40s08syiqkkw" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0001_8.png" id="11_5jvfg"]
+[ext_resource type="Texture2D" uid="uid://c0lwhrtdru4qd" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0003_6.png" id="11_uxkmo"]
+[ext_resource type="Texture2D" uid="uid://0g0gmoxbi10r" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0000_9.png" id="12_btka8"]
+[ext_resource type="Texture2D" uid="uid://bij6q5w0lbqq1" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0002_7.png" id="12_od6ev"]
 
-[sub_resource type="Theme" id="Theme_n3mna"]
-Label/font_sizes/font_size = 41
-Label/fonts/font = ExtResource("1_hdj2u")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4wmq"]
+texture = ExtResource("2_m4a6v")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxkmo"]
+texture = ExtResource("3_eikmy")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_od6ev"]
+texture = ExtResource("4_eqd1q")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 0.98600006
 anchor_bottom = 1.0
+offset_right = 15.399902
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n3mna")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_n3mna")
-color = Color(0.42745098, 0.27450982, 0.17254902, 0)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1898.0
+offset_bottom = 1194.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Yare xdddddddd zzzzzzz
 waaazaaaaaaaaaaaaaaaa"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+[node name="menuInicio" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="inicio" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="inicio" type="Button" parent="MarginContainer/menuInicio"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "inicio"
 
-[node name="opciones" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="opciones" type="Button" parent="MarginContainer/menuInicio"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "Opciones"
 
-[node name="salir" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="salir" type="Button" parent="MarginContainer/menuInicio"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "Salir"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+[node name="menuOpciones" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="video" type="Button" parent="MarginContainer/menuOpciones"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "Video"
+
+[node name="audio" type="Button" parent="MarginContainer/menuOpciones"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "Audio"
+
+[node name="volver" type="Button" parent="MarginContainer/menuOpciones"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "Volver"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_vertical = 8
 
-[node name="FullScream_changed" type="Button" parent="ColorRect/MarginContainer/VBoxContainer3"]
+[node name="FullScream_changed" type="Button" parent="MarginContainer/VBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "FullScream"
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2(526, 330)
-scale = Vector2(2.2, 2.2)
-transform = Transform2D(2.2, 0, 0, 2.2, 526, 330)
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
+offset = Vector2(300, 200)
+scale = Vector2(2.5, 2.5)
+transform = Transform2D(2.5, 0, 0, 2.5, 300, 200)
 scroll_offset = Vector2(1, 0)
 script = ExtResource("3_raexy")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(564, 0)
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("9_m4a6v")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2(270, 2)
+texture = ExtResource("5_btka8")
+offset = Vector2(1.6666718, -2)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.2, 1.2)
-motion_mirroring = Vector2(564, 0)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("8_levpg")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(270, 0)
+texture = ExtResource("6_levpg")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(928, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(270, 0)
+texture = ExtResource("7_m4a6v")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.4, 1.4)
-motion_mirroring = Vector2(564, 0)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("7_btka8")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer4"]
+position = Vector2(270, 0)
+texture = ExtResource("8_eikmy")
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.6, 1.6)
-motion_mirroring = Vector2(564, 0)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("6_5jvfg")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer5"]
+position = Vector2(270, 0)
+texture = ExtResource("9_eqd1q")
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1.8, 1.8)
-motion_mirroring = Vector2(564, 0)
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(2.5, 2.5)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("5_ix7d4")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer6"]
+position = Vector2(270, 0)
+texture = ExtResource("10_l4wmq")
 
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
 motion_scale = Vector2(2, 2)
-motion_mirroring = Vector2(564, 0)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("4_raexy")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer7"]
+position = Vector2(270, 0)
+texture = ExtResource("11_uxkmo")
 
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(2.2, 2.2)
-motion_mirroring = Vector2(564, 0)
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(2.3, 2.3)
+motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource("3_0c7tf")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer8"]
+position = Vector2(263.6667, -72.33333)
+scale = Vector2(1.0143709, -0.7331258)
+texture = ExtResource("12_od6ev")
+offset = Vector2(12.009369, 2.9910278)
 
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/inicio" to="." method="_on_inicio_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/salir" to="." method="_on_salir_pressed"]
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(2.4, 2.4)
+motion_mirroring = Vector2(928, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer9"]
+position = Vector2(270, 0)
+texture = ExtResource("11_5jvfg")
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(2.8, 2.8)
+motion_mirroring = Vector2(928, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer10"]
+position = Vector2(270, 0)
+texture = ExtResource("12_btka8")
+
+[connection signal="pressed" from="MarginContainer/menuInicio/inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="MarginContainer/menuInicio/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="MarginContainer/menuInicio/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer/menuOpciones/volver" to="." method="_on_volver_pressed"]

@@ -1,6 +1,6 @@
 extends ParallaxBackground
 
-@export var velocidad_paralax: float=18.0
+@export var velocidad_paralax: float=15.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

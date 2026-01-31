@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=17 format=3 uid="uid://kc38fkbx5ix5"]
 
-[ext_resource type="Texture2D" uid="uid://733dg73dmbh5" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_pl1m1"]
-[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_tbagl"]
-[ext_resource type="Texture2D" uid="uid://56x5i4vlo26d" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="3_vetjo"]
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="4_eusdf"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="5_j7v0x"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_ul8ae"]
-[ext_resource type="Texture2D" uid="uid://r8rdwg5wrm0o" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="7_7stxm"]
-[ext_resource type="Texture2D" uid="uid://dtgyyl8aoqg7p" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="8_hr3f7"]
+[ext_resource type="Texture2D" uid="uid://de8rmutdtayo0" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_pl1m1"]
+[ext_resource type="Texture2D" uid="uid://c8wmhsf2hvtw5" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_tbagl"]
+[ext_resource type="Texture2D" uid="uid://bv7gh6ybawdws" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="3_vetjo"]
+[ext_resource type="Texture2D" uid="uid://jk5r0vtjor53" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="4_eusdf"]
+[ext_resource type="Texture2D" uid="uid://cdkg40jtje16h" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="5_j7v0x"]
+[ext_resource type="Texture2D" uid="uid://dlssleb2bxpbu" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_ul8ae"]
+[ext_resource type="Texture2D" uid="uid://dkvtmc05416vb" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="7_7stxm"]
+[ext_resource type="Texture2D" uid="uid://ce6dbh6k665u" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="8_hr3f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0yjt"]
 texture = ExtResource("1_pl1m1")

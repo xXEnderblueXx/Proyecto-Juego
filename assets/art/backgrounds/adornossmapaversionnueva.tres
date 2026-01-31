@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cou7lf57ns0w4" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree.png" id="8_4boxq"]
 [ext_resource type="Texture2D" uid="uid://c158i3r3j75ko" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree_Small.png" id="9_d2q8d"]
 [ext_resource type="Texture2D" uid="uid://cw6wr3rxenp6" path="res://assets/art/backgrounds/Outdoor decoration/Outdoor_Decor_Free.png" id="10_g3jlb"]
-[ext_resource type="Texture2D" uid="uid://c2v7dkp0ja6vl" path="res://assets/art/backgrounds/Buildings/CityWall_Gate_1.png" id="11_rc8ns"]
-[ext_resource type="Texture2D" uid="uid://v6iwmynrdyr8" path="res://assets/art/backgrounds/Buildings/Props.png" id="12_h1eiq"]
+[ext_resource type="Texture2D" uid="uid://cj7ih517ngb44" path="res://assets/art/backgrounds/Buildings/CityWall_Gate_1.png" id="11_rc8ns"]
+[ext_resource type="Texture2D" uid="uid://bp8rbtv37qi87" path="res://assets/art/backgrounds/Buildings/Props.png" id="12_h1eiq"]
 [ext_resource type="Texture2D" uid="uid://dyp2ebe5q3h31" path="res://assets/art/backgrounds/Animals/Chicken/Chicken.png" id="13_mqn5m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jcwc"]

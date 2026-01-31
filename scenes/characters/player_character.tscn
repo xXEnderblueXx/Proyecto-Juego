@@ -108,6 +108,7 @@ _data = {
 }
 
 [node name="PlayerCharacter" type="PlayerCharacter"]
+move_speed = 70.0
 position = Vector2(164, 97)
 scale = Vector2(0.07, 0.07)
 

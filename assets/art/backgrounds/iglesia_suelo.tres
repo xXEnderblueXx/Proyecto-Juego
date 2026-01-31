@@ -1,0 +1,58 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dampaei0p06ly"]
+
+[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_70moc"]
+[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_n68ew"]
+[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_jmd2s"]
+[ext_resource type="Texture2D" uid="uid://dsucq4ck2lmml" path="res://assets/art/backgrounds/Tiles/baldosa_para_iglesia.png" id="4_hs3rs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7taop"]
+texture = ExtResource("1_70moc")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clcjp"]
+texture = ExtResource("2_n68ew")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bey4b"]
+texture = ExtResource("3_jmd2s")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmrrj"]
+texture = ExtResource("4_hs3rs")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_7taop")
+sources/1 = SubResource("TileSetAtlasSource_clcjp")
+sources/2 = SubResource("TileSetAtlasSource_bey4b")
+sources/3 = SubResource("TileSetAtlasSource_mmrrj")

@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dampaei0p06ly"]
 
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_70moc"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_n68ew"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_jmd2s"]
+[ext_resource type="Texture2D" uid="uid://jk5r0vtjor53" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_70moc"]
+[ext_resource type="Texture2D" uid="uid://cdkg40jtje16h" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_n68ew"]
+[ext_resource type="Texture2D" uid="uid://dlssleb2bxpbu" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_jmd2s"]
 [ext_resource type="Texture2D" uid="uid://dsucq4ck2lmml" path="res://assets/art/backgrounds/Tiles/baldosa_para_iglesia.png" id="4_hs3rs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7taop"]

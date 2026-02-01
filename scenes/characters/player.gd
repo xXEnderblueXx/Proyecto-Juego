@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends PlayerCharacter
 
 @onready var animationplayer=$AnimationPlayer
 @onready var sprite2D=$Sprite2D
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	
 	var directionX = Input.get_axis("ui_left","ui_right")
 	var directionY = Input.get_axis("ui_up","ui_down")

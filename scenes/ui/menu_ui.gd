@@ -12,3 +12,14 @@ func _on_opciones_pressed() -> void:
 
 func _on_salir_pressed() -> void:
 	get_tree().quit()
+<<<<<<< Updated upstream
+=======
+
+func _on_volver_pressed() -> void:
+	$MarginContainer/menuInicio.process_mode = Node.PROCESS_MODE_INHERIT
+	$MarginContainer/menuInicio.visible = true
+	$MarginContainer/menuOpciones.process_mode = Node.PROCESS_MODE_DISABLED
+	$MarginContainer/menuOpciones.visible = false
+
+#profe si lee esto pongame 20
+>>>>>>> Stashed changes

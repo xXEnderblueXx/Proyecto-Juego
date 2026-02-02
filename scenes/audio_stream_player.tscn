@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmrmfrrwf1bqw"]
+
+[ext_resource type="AudioStream" uid="uid://dsuhv3vd1a2xu" path="res://assets/audio/music/jueguito cancion.wav" id="1_nbeep"]
+[ext_resource type="Script" uid="uid://tm6b82mgmsrg" path="res://scenes/audio_stream_player.gd" id="2_6eoa2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_nbeep")
+script = ExtResource("2_6eoa2")

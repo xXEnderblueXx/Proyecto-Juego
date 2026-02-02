@@ -16,3 +16,15 @@ data_*/
 mono_crash.*.json
 src/register_types.o
 .sconsign.dblite
+
+# Ignorar archivos temporales de compilación
+*.TMP
+*.tmp
+*.exp
+*.lib
+*.obj
+*.o
+
+# Ignorar archivos temporales de Godot/Windows
+~*
+*.console

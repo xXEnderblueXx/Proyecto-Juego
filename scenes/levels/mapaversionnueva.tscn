@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://cfju310t1u5gj"]
+[gd_scene load_steps=6 format=4 uid="uid://cfju310t1u5gj"]
 
 [ext_resource type="TileSet" uid="uid://kc38fkbx5ix5" path="res://assets/art/backgrounds/suelitomapaversionnueva.tres" id="1_wnrbf"]
 [ext_resource type="TileSet" uid="uid://by5aot4y2htib" path="res://assets/art/backgrounds/adornossmapaversionnueva.tres" id="2_7xfg7"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="3_7xfg7"]
+[ext_resource type="Script" uid="uid://cn0q70x5knwxk" path="res://scenes/levels/area_2d.gd" id="4_rmkd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyjti"]
 
 [node name="mapa" type="Node2D"]
 y_sort_enabled = true
@@ -19,4 +22,15 @@ tile_map_data = PackedByteArray("AAAsABEAAAABAAcAAAAsABIAAAABAAgAAAAsABMAAAABAAk
 tile_set = ExtResource("2_7xfg7")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7xfg7")]
-position = Vector2(479, 985)
+position = Vector2(481, 587)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_rmkd1")
+next_map = "res://scenes/levels/iglesia_lista.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(486, 5.999998)
+scale = Vector2(-2.941972, 0.4415619)
+shape = SubResource("RectangleShape2D_dyjti")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

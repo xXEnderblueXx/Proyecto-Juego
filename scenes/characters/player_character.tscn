@@ -222,7 +222,7 @@ script = ExtResource("1_3hfu2")
 shape = SubResource("RectangleShape2D_3hfu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(14.285714, -142.85712)
+position = Vector2(14.285715, -157.14282)
 scale = Vector2(0.9764613, 0.8043184)
 texture = ExtResource("1_5l4cv")
 hframes = 5
@@ -231,7 +231,13 @@ region_enabled = true
 region_rect = Rect2(-2.0168762, -35.726624, 5119.0195, 6172.1914)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0.00017547607, -8.773804e-05)
 zoom = Vector2(4, 4)
+limit_enabled = false
+limit_left = 452
+limit_top = 216
+limit_right = 746
+limit_bottom = 387
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

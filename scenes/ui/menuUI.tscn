@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bs4o10qjkjgng"]
+[gd_scene load_steps=25 format=3 uid="uid://bs4o10qjkjgng"]
 
 [ext_resource type="Script" uid="uid://c76m18ho2pg8s" path="res://scenes/ui/menu_ui.gd" id="1_n3mna"]
 [ext_resource type="Texture2D" uid="uid://b14r7qmp14vba" path="res://assets/art/ui/buttons/no05.png" id="2_m4a6v"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://0g0gmoxbi10r" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0000_9.png" id="12_btka8"]
 [ext_resource type="Texture2D" uid="uid://bij6q5w0lbqq1" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0002_7.png" id="12_od6ev"]
 [ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="16_eikmy"]
+[ext_resource type="AudioStream" uid="uid://dsuhv3vd1a2xu" path="res://assets/audio/music/jueguito cancion.wav" id="17_l4wmq"]
+[ext_resource type="Script" uid="uid://xe0bly6j4stp" path="res://scenes/ui/audio_stream_player.gd" id="18_uxkmo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4wmq"]
 texture = ExtResource("2_m4a6v")
@@ -100,6 +102,7 @@ size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Yare Beat"
 horizontal_alignment = 1
 
@@ -259,6 +262,7 @@ position = Vector2(270, 0)
 texture = ExtResource("12_btka8")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1186, 629)
 scale = Vector2(4.518987, 4.9695888)
 texture = ExtResource("16_eikmy")
@@ -268,6 +272,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_l4wmq")
 }
 autoplay = "fade_out"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_l4wmq")
+script = ExtResource("18_uxkmo")
 
 [connection signal="pressed" from="MarginContainer/menuInicio/inicio" to="." method="_on_inicio_pressed"]
 [connection signal="pressed" from="MarginContainer/menuInicio/opciones" to="." method="_on_opciones_pressed"]

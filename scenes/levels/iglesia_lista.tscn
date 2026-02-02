@@ -1,11 +1,49 @@
-[gd_scene load_steps=6 format=4 uid="uid://cssd171w3msol"]
+[gd_scene load_steps=10 format=4 uid="uid://cssd171w3msol"]
 
 [ext_resource type="TileSet" uid="uid://dampaei0p06ly" path="res://assets/art/backgrounds/iglesia_suelo.tres" id="1_x7gep"]
 [ext_resource type="TileSet" uid="uid://bastgirp8qgvo" path="res://assets/art/backgrounds/iglesia_adornos.tres" id="2_mduw7"]
 [ext_resource type="Script" uid="uid://cn0q70x5knwxk" path="res://scenes/levels/area_2d.gd" id="3_yd0lk"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="4_jn6a8"]
+[ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="5_jn6a8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lk6w"]
+
+[sub_resource type="Animation" id="Animation_eikmy"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eqd1q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4wmq"]
+_data = {
+&"RESET": SubResource("Animation_eqd1q"),
+&"fade_out": SubResource("Animation_eikmy")
+}
 
 [node name="iglesia" type="Node2D"]
 
@@ -19,14 +57,26 @@ tile_set = ExtResource("2_mduw7")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_yd0lk")
-next_map = "res://scenes/levels/iglesia_lista.tscn"
+next_map = "res://scenes/levels/mapaversionnueva.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(486, 5.999998)
-scale = Vector2(-2.941972, 0.4415619)
+position = Vector2(488.00003, 987.00006)
+rotation = 3.1415927
+scale = Vector2(2.941972, -0.4415619)
 shape = SubResource("RectangleShape2D_0lk6w")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_jn6a8")]
 position = Vector2(483, 964)
+
+[node name="ColorRect" type="Sprite2D" parent="."]
+position = Vector2(1186, 629)
+scale = Vector2(4.518987, 4.9695888)
+texture = ExtResource("5_jn6a8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_l4wmq")
+}
+autoplay = "fade_out"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -51,44 +51,22 @@ void PlayerCharacter::_ready() {
 void PlayerCharacter::_physics_process(double delta) {
     if (Engine::get_singleton()->is_editor_hint()) return;
 
-    // 1. Movimiento (Esto sabemos que funciona)
+    // 1. Movimiento
     Input* input = Input::get_singleton();
     Vector2 input_dir = input->get_vector("ui_left", "ui_right", "ui_up", "ui_down");
+    
     Vector2 velocity = input_dir * move_speed;
     set_velocity(velocity);
     move_and_slide();
 
+    // 2. Actualizar dirección (Para saber a dónde mira Diego)
     if (velocity.length() > 0) {
         last_direction = velocity.normalized();
     }
 
-    // 2. DIAGNÓSTICO DEL RAYCAST
-    // Aquí es donde vamos a saber la verdad:
-
-    if (interaction_raycast == nullptr) {
-        // SI SALE ESTO EN LA CONSOLA -> El enlace falló en el _ready()
-        UtilityFunctions::print("ERROR CRÍTICO: interaction_raycast es NULL. No encontré el nodo.");
-        
-        // Intento de rescate de emergencia (buscarlo de nuevo)
-        interaction_raycast = get_node<RayCast2D>("InteractionRayCast");
-    } 
-    else {
-        // SI ENTRA AQUÍ -> El enlace existe. Forzamos la línea visual.
-        
-        // Forzamos 100px a la derecha
-        interaction_raycast->set_target_position(Vector2(100, 0)); 
-        interaction_raycast->force_raycast_update(); // Obliga a Godot a calcularlo YA
-
-        if (interaction_raycast->is_colliding()) {
-            Object* collider = interaction_raycast->get_collider();
-            if (collider) {
-                 UtilityFunctions::print("¡CONTACTO!: ", collider->get_class());
-            }
-        } else {
-             // Si sale esto, el rayo existe pero no toca nada (aire)
-             // Descomenta la siguiente línea solo si quieres mucho spam
-             // UtilityFunctions::print("Rayo activo (Midiendo aire)...");
-        }
+    // 3. Actualizar RayCast (Ahora sí sigue a Diego)
+    if (interaction_raycast) {
+        interaction_raycast->set_target_position(last_direction * 50); // 50px en la dirección que miras
     }
 }
 

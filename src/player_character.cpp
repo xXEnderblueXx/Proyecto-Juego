@@ -1,80 +1,117 @@
 #include "player_character.h"
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/engine.hpp>
+#include <godot_cpp/variant/utility_functions.hpp> // <--- 1. NUEVO: Para usar print()
 
 using namespace godot;
 
 PlayerCharacter::PlayerCharacter() {
-    move_speed = 50.0; // Velocidad inicial (Ajusten esto en el godot por si es muy rapido o lento)
-    last_direction = Vector2(0, 1); // Mirando hacia abajo al inicio 
+    move_speed = 50.0;
+    last_direction = Vector2(0, 1);
 }
 
 PlayerCharacter::~PlayerCharacter() {
-    // Nada que limpiar por ahora xdxdxd
+    // Nada que limpiar
 }
 
 void PlayerCharacter::_bind_methods() {
-    // Registramos la variable 'move_speed' para que aparezca en el Inspector
     ClassDB::bind_method(D_METHOD("set_move_speed", "p_speed"), &PlayerCharacter::set_move_speed);
     ClassDB::bind_method(D_METHOD("get_move_speed"), &PlayerCharacter::get_move_speed);
     ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "move_speed"), "set_move_speed", "get_move_speed");
-    // el metodo para que jesus pueda llamar a "personaje.get_last_direction()" para saber hacia donde mira el personaje
+    
     ClassDB::bind_method(D_METHOD("get_last_direction"), &PlayerCharacter::get_last_direction); 
-    // Para ver la flechita en el inspector para depurar
     ADD_PROPERTY(PropertyInfo(Variant::VECTOR2, "last_direction"), "", "get_last_direction");
 
+    // <--- 2. NUEVO: Registramos la función interact para usarla en GDScript
+    ClassDB::bind_method(D_METHOD("interact"), &PlayerCharacter::interact);
+}
+
+// <--- 3. NUEVO: Función _ready para conectar el nodo RayCast
+void PlayerCharacter::_ready() {
+    if (Engine::get_singleton()->is_editor_hint()) return;
+
+    interaction_raycast = get_node<RayCast2D>("InteractionRayCast");
+    
+    if (!interaction_raycast) {
+        UtilityFunctions::print("ERROR: No se encontró el nodo 'InteractionRayCast'.");
+    } else {
+
+        interaction_raycast->set_enabled(true); 
+        interaction_raycast->set_target_position(Vector2(0, 50)); // Un rayo de 50px
+        interaction_raycast->set_collision_mask(1); // Detectar la capa 1 (donde suele estar todo)
+        
+        UtilityFunctions::print("RayCast configurado y LISTO."); // Para confirmar que pasó por aquí
+        interaction_raycast->set_collide_with_areas(true);  // ¡DETECTAR ÁREAS!
+        interaction_raycast->set_collide_with_bodies(true); // Detectar paredes
+        
+        UtilityFunctions::print("RayCast configurado (Áreas y Cuerpos).");
+    }
 }
 
 void PlayerCharacter::_physics_process(double delta) {
     if (Engine::get_singleton()->is_editor_hint()) return;
 
+    // 1. Movimiento (Esto sabemos que funciona)
     Input* input = Input::get_singleton();
-    Vector2 direction = Vector2(0, 0);
-
-    // 4 direcciones (Cruz)
-    // Con if eso amarra mejor
-    // Aquí: Derecha > Izquierda > Arriba > Abajo 
-    
-    if (input->is_action_pressed("ui_right")) {
-        direction.x = 1;
-    }
-    else if (input->is_action_pressed("ui_left")) {
-        direction.x = -1;
-    }
-    else if (input->is_action_pressed("ui_up")) {
-        direction.y = -1; // Y negativo es arriba
-    }
-    else if (input->is_action_pressed("ui_down")) {
-        direction.y = 1;
-    }
-
-    //  Al usar "else if", si mantienes W y D al mismo tiempo,
-    // el personaje se movera a la derecha (porque es el primer if) y ignorará la W.
-    // Nunca se moverá en diagonal boooomb waza me voy al lol
-
-    // Aplicar velocidad (usando la variable 'move_speed') para mover al personaje
-    set_velocity(direction * move_speed); 
-    
+    Vector2 input_dir = input->get_vector("ui_left", "ui_right", "ui_up", "ui_down");
+    Vector2 velocity = input_dir * move_speed;
+    set_velocity(velocity);
     move_and_slide();
 
-    // L]ogica de movimiento
-    if (direction.length() > 0) {
-        // Si nos estamos moviendo, actualizamos la memoria
-        last_direction = direction.normalized(); // aqui se guarda el dato
+    if (velocity.length() > 0) {
+        last_direction = velocity.normalized();
+    }
 
-        // Se aplica la velocidad
-        set_velocity(last_direction * move_speed);
+    // 2. DIAGNÓSTICO DEL RAYCAST
+    // Aquí es donde vamos a saber la verdad:
+
+    if (interaction_raycast == nullptr) {
+        // SI SALE ESTO EN LA CONSOLA -> El enlace falló en el _ready()
+        UtilityFunctions::print("ERROR CRÍTICO: interaction_raycast es NULL. No encontré el nodo.");
+        
+        // Intento de rescate de emergencia (buscarlo de nuevo)
+        interaction_raycast = get_node<RayCast2D>("InteractionRayCast");
+    } 
+    else {
+        // SI ENTRA AQUÍ -> El enlace existe. Forzamos la línea visual.
+        
+        // Forzamos 100px a la derecha
+        interaction_raycast->set_target_position(Vector2(100, 0)); 
+        interaction_raycast->force_raycast_update(); // Obliga a Godot a calcularlo YA
+
+        if (interaction_raycast->is_colliding()) {
+            Object* collider = interaction_raycast->get_collider();
+            if (collider) {
+                 UtilityFunctions::print("¡CONTACTO!: ", collider->get_class());
+            }
+        } else {
+             // Si sale esto, el rayo existe pero no toca nada (aire)
+             // Descomenta la siguiente línea solo si quieres mucho spam
+             // UtilityFunctions::print("Rayo activo (Midiendo aire)...");
+        }
+    }
+}
+
+// <--- 5. NUEVO: La implementación de la lógica de interacción
+void PlayerCharacter::interact() {
+    if (!interaction_raycast) return;
+
+    if (interaction_raycast->is_colliding()) {
+        Object* collider = interaction_raycast->get_collider();
+        if (collider) {
+            UtilityFunctions::print("Interactuando con: ", collider->get_class());
+            
+            // Si el objeto tiene un método "activar" (en GDScript), lo llamamos
+            if (collider->has_method("activar")) {
+                collider->call("activar");
+            }
+        }
     } else {
-        // Si no nos movemos, la velocidad es 0, epro 'last_direction' recuerda la ultima direccion
-        set_velocity(Vector2(0, 0));
+        UtilityFunctions::print("No hay nada enfrente.");
     }
-    
-    move_and_slide();
 }
 
 // Getters y Setters
 void PlayerCharacter::set_move_speed(double p_speed) { move_speed = p_speed; }
 double PlayerCharacter::get_move_speed() const { return move_speed; }
-Vector2 PlayerCharacter::get_last_direction() const {
-    return last_direction;
-}
+Vector2 PlayerCharacter::get_last_direction() const { return last_direction; }

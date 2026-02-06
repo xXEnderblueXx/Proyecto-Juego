@@ -51,22 +51,37 @@ void PlayerCharacter::_ready() {
 void PlayerCharacter::_physics_process(double delta) {
     if (Engine::get_singleton()->is_editor_hint()) return;
 
-    // 1. Movimiento
     Input* input = Input::get_singleton();
-    Vector2 input_dir = input->get_vector("ui_left", "ui_right", "ui_up", "ui_down");
+    Vector2 input_dir = Vector2(0, 0);
+
+    // --- 1. LÓGICA DE MOVIMIENTO EN 4 DIRECCIONES (RESTAURADA) ---
+    // Usamos 'else if' para asegurar que solo se elija UNA dirección a la vez.
+    // Esto evita que te muevas en diagonal.
     
+    if (input->is_action_pressed("ui_right")) {
+        input_dir.x = 1;
+    } else if (input->is_action_pressed("ui_left")) {
+        input_dir.x = -1;
+    } else if (input->is_action_pressed("ui_down")) {
+        input_dir.y = 1;
+    } else if (input->is_action_pressed("ui_up")) {
+        input_dir.y = -1;
+    }
+
+    // Aplicamos la velocidad
     Vector2 velocity = input_dir * move_speed;
     set_velocity(velocity);
     move_and_slide();
 
-    // 2. Actualizar dirección (Para saber a dónde mira Diego)
+    // --- 2. LÓGICA DEL RAYCAST (NO TOCAR) ---
+    // Actualizamos la dirección solo si nos estamos moviendo
     if (velocity.length() > 0) {
         last_direction = velocity.normalized();
     }
 
-    // 3. Actualizar RayCast (Ahora sí sigue a Diego)
+    // El RayCast sigue a la última dirección registrada
     if (interaction_raycast) {
-        interaction_raycast->set_target_position(last_direction * 50); // 50px en la dirección que miras
+        interaction_raycast->set_target_position(last_direction * 50);
     }
 }
 

@@ -72,20 +72,17 @@ void PlayerCharacter::_physics_process(double delta) {
 
 // <--- 5. NUEVO: La implementación de la lógica de interacción
 void PlayerCharacter::interact() {
-    if (!interaction_raycast) return;
-
-    if (interaction_raycast->is_colliding()) {
+    if (interaction_raycast && interaction_raycast->is_colliding()) {
         Object* collider = interaction_raycast->get_collider();
         if (collider) {
-            UtilityFunctions::print("Interactuando con: ", collider->get_class());
-            
-            // Si el objeto tiene un método "activar" (en GDScript), lo llamamos
+            // Preguntamos si el objeto tiene el método "activar"
             if (collider->has_method("activar")) {
-                collider->call("activar");
+                collider->call("activar"); // ¡BINGO!
+            } else {
+                // Opcional: Para saber si chocamos con algo que no es interactuable (como el TileMap)
+                UtilityFunctions::print("Chocando con: ", collider->get_class(), " (No tiene activar)");
             }
         }
-    } else {
-        UtilityFunctions::print("No hay nada enfrente.");
     }
 }
 

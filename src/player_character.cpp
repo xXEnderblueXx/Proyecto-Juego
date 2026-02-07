@@ -6,6 +6,7 @@
 using namespace godot;
 
 PlayerCharacter::PlayerCharacter() {
+    can_move = true; 
     move_speed = 50.0;
     last_direction = Vector2(0, 1);
 }
@@ -15,6 +16,13 @@ PlayerCharacter::~PlayerCharacter() {
 }
 
 void PlayerCharacter::_bind_methods() {
+
+    ClassDB::bind_method(D_METHOD("set_can_move", "p_value"), &PlayerCharacter::set_can_move);
+    ClassDB::bind_method(D_METHOD("get_can_move"), &PlayerCharacter::get_can_move);
+
+    // Esto permite que aparezca como propiedad en el Inspector de Godot
+    ADD_PROPERTY(PropertyInfo(Variant::BOOL, "can_move"), "set_can_move", "get_can_move");
+
     ClassDB::bind_method(D_METHOD("set_move_speed", "p_speed"), &PlayerCharacter::set_move_speed);
     ClassDB::bind_method(D_METHOD("get_move_speed"), &PlayerCharacter::get_move_speed);
     ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "move_speed"), "set_move_speed", "get_move_speed");
@@ -51,13 +59,19 @@ void PlayerCharacter::_ready() {
 void PlayerCharacter::_physics_process(double delta) {
     if (Engine::get_singleton()->is_editor_hint()) return;
 
+    // 1. OBTENER INPUT (Siempre va al principio)
     Input* input = Input::get_singleton();
+
+    // 2. BLOQUEO DE MOVIMIENTO (Para diálogos)
+    if (!can_move) {
+        set_velocity(Vector2(0, 0));
+        move_and_slide();
+        return; // IMPORTANTE: Si está bloqueado, "cortamos" aquí y no dejamos que haga nada más.
+    }
+
     Vector2 input_dir = Vector2(0, 0);
 
-    // --- 1. LÓGICA DE MOVIMIENTO EN 4 DIRECCIONES (RESTAURADA) ---
-    // Usamos 'else if' para asegurar que solo se elija UNA dirección a la vez.
-    // Esto evita que te muevas en diagonal.
-    
+    // 3. LÓGICA DE MOVIMIENTO EN 4 DIRECCIONES
     if (input->is_action_pressed("ui_right")) {
         input_dir.x = 1;
     } else if (input->is_action_pressed("ui_left")) {
@@ -68,20 +82,24 @@ void PlayerCharacter::_physics_process(double delta) {
         input_dir.y = -1;
     }
 
-    // Aplicamos la velocidad
+    // Aplicar movimiento
     Vector2 velocity = input_dir * move_speed;
     set_velocity(velocity);
     move_and_slide();
 
-    // --- 2. LÓGICA DEL RAYCAST (NO TOCAR) ---
-    // Actualizamos la dirección solo si nos estamos moviendo
+    // 4. LÓGICA DEL RAYCAST (Actualizar la mira)
     if (velocity.length() > 0) {
         last_direction = velocity.normalized();
     }
 
-    // El RayCast sigue a la última dirección registrada
     if (interaction_raycast) {
         interaction_raycast->set_target_position(last_direction * 50);
+    }
+
+    // 5. DETECTAR INTERACCIÓN (¡ESTO ERA LO QUE FALTABA!)
+    // Sin esto, la tecla E no hace nada.
+    if (input->is_action_just_pressed("interact")) {
+        interact();
     }
 }
 
@@ -102,6 +120,13 @@ void PlayerCharacter::interact() {
 }
 
 // Getters y Setters
+void PlayerCharacter::set_can_move(bool p_value) {
+    can_move = p_value;
+}
+
+bool PlayerCharacter::get_can_move() const {
+    return can_move;
+}
 void PlayerCharacter::set_move_speed(double p_speed) { move_speed = p_speed; }
 double PlayerCharacter::get_move_speed() const { return move_speed; }
 Vector2 PlayerCharacter::get_last_direction() const { return last_direction; }

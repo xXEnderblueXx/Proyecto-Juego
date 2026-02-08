@@ -7,6 +7,8 @@ extends Control
 func _ready() -> void:
 	opciones.process_mode = Node.PROCESS_MODE_DISABLED
 	opciones.visible = false
+	resolution.process_mode = Node.PROCESS_MODE_DISABLED
+	resolution.visible = false
 
 func _on_inicio_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/mapapuebloyare.tscn")
@@ -41,11 +43,11 @@ func configurar_selector():
 	for nombre in CONFIGMANAGER.resoluciones.keys():
 		selector.add_item(nombre)
 
-
 func _on_video_pressed() -> void:
-	resolution.process_mode = Node.PROCESS_MODE_INHERIT
-	resolution.visible = true
-
+	# Invierte el estado de visibilidad (si es true pasa a false y viceversa)
+	resolution.visible = !resolution.visible
+	# Asigna el modo de procesamiento dependiendo de la nueva visibilidad
+	resolution.process_mode = Node.PROCESS_MODE_INHERIT if resolution.visible else Node.PROCESS_MODE_DISABLED
 
 func _on_audio_pressed() -> void:
 	pass

@@ -170,7 +170,7 @@ text = "Volver"
 
 [node name="resolutions" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 4
 alignment = 1
 

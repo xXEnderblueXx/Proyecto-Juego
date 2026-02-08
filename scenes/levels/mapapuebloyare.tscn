@@ -24,7 +24,6 @@ tile_map_data = PackedByteArray("AAD//yEABAADAAMAAAD//yIABAADAAAAAAD//yUABAADAAM
 tile_set = ExtResource("2_aghq2")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_vjrtq")]
-move_speed = 200.0
 position = Vector2(556, 33)
 
 [node name="NPC" type="Node2D" parent="."]

@@ -1,20 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bs4o10qjkjgng"]
+[gd_scene load_steps=15 format=3 uid="uid://bs4o10qjkjgng"]
 
 [ext_resource type="Script" uid="uid://c76m18ho2pg8s" path="res://scenes/ui/menu_ui.gd" id="1_n3mna"]
+[ext_resource type="Texture2D" uid="uid://373jij3nw8yl" path="res://assets/art/backgrounds/Menu/fondo.png" id="2_36i0x"]
 [ext_resource type="Texture2D" uid="uid://b14r7qmp14vba" path="res://assets/art/ui/buttons/no05.png" id="2_m4a6v"]
 [ext_resource type="Texture2D" uid="uid://cyh3xdfnsdipd" path="res://assets/art/ui/buttons/no03.png" id="3_eikmy"]
-[ext_resource type="Script" uid="uid://jdmvixjatgbw" path="res://scenes/ui/parallax_background.gd" id="3_raexy"]
 [ext_resource type="Texture2D" uid="uid://b0e8fct1tbbp2" path="res://assets/art/ui/buttons/no02.png" id="4_eqd1q"]
-[ext_resource type="Texture2D" uid="uid://biwg27nykaju6" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0009_2.png" id="5_btka8"]
-[ext_resource type="Texture2D" uid="uid://gmn10s5n2qt4" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0008_3.png" id="6_levpg"]
-[ext_resource type="Texture2D" uid="uid://djdynnrmqb2gp" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0007_Lights.png" id="7_m4a6v"]
-[ext_resource type="Texture2D" uid="uid://bk7grvaig5j3y" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0006_4.png" id="8_eikmy"]
-[ext_resource type="Texture2D" uid="uid://i4ic43xtis0g" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0005_5.png" id="9_eqd1q"]
-[ext_resource type="Texture2D" uid="uid://bv58wm1t7uuho" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0004_Lights.png" id="10_l4wmq"]
-[ext_resource type="Texture2D" uid="uid://b40s08syiqkkw" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0001_8.png" id="11_5jvfg"]
-[ext_resource type="Texture2D" uid="uid://c0lwhrtdru4qd" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0003_6.png" id="11_uxkmo"]
-[ext_resource type="Texture2D" uid="uid://0g0gmoxbi10r" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0000_9.png" id="12_btka8"]
-[ext_resource type="Texture2D" uid="uid://bij6q5w0lbqq1" path="res://assets/UI/ParalaxBackGround/Background layers/Layer_0002_7.png" id="12_od6ev"]
 [ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="16_eikmy"]
 [ext_resource type="AudioStream" uid="uid://dsuhv3vd1a2xu" path="res://assets/audio/music/jueguito cancion.wav" id="17_l4wmq"]
 [ext_resource type="Script" uid="uid://xe0bly6j4stp" path="res://scenes/ui/audio_stream_player.gd" id="18_uxkmo"]
@@ -86,6 +76,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n3mna")
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_36i0x")
+expand_mode = 1
+stretch_mode = 6
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -93,6 +98,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="Titulo" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -105,10 +114,10 @@ theme_override_font_sizes/font_size = 48
 text = "Yare Beat"
 horizontal_alignment = 1
 
-[node name="menuInicio" type="VBoxContainer" parent="MarginContainer"]
+[node name="menuInicio" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 alignment = 1
 
 [node name="inicio" type="Button" parent="MarginContainer/menuInicio"]
@@ -132,10 +141,10 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "Salir"
 
-[node name="menuOpciones" type="VBoxContainer" parent="MarginContainer"]
+[node name="menuOpciones" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 alignment = 1
 
 [node name="video" type="Button" parent="MarginContainer/menuOpciones"]
@@ -188,7 +197,7 @@ text = "1920x1080"
 
 [node name="FullScream" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="FullScream_changed" type="Button" parent="MarginContainer/FullScream"]
@@ -196,105 +205,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "FullScream"
 
-[node name="Node2D" type="Node2D" parent="MarginContainer"]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="MarginContainer/Node2D"]
-offset = Vector2(300, 200)
-scale = Vector2(2.5, 2.5)
-transform = Transform2D(2.5, 0, 0, 2.5, 300, 200)
-scroll_offset = Vector2(1, 0)
-script = ExtResource("3_raexy")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer"]
-position = Vector2(270, 2)
-texture = ExtResource("5_btka8")
-offset = Vector2(1.6666718, -2)
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(1.2, 1.2)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer2"]
-position = Vector2(270, 0)
-texture = ExtResource("6_levpg")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(3, 3)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer3"]
-position = Vector2(270, 0)
-texture = ExtResource("7_m4a6v")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(1.4, 1.4)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer4"]
-position = Vector2(270, 0)
-texture = ExtResource("8_eikmy")
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(1.6, 1.6)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer5"]
-position = Vector2(270, 0)
-texture = ExtResource("9_eqd1q")
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(2.5, 2.5)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer6"]
-position = Vector2(270, 0)
-texture = ExtResource("10_l4wmq")
-
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(2, 2)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer7"]
-position = Vector2(270, 0)
-texture = ExtResource("11_uxkmo")
-
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(2.3, 2.3)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer8"]
-position = Vector2(263.6667, -72.33333)
-scale = Vector2(1.0143709, -0.7331258)
-texture = ExtResource("12_od6ev")
-offset = Vector2(12.009369, 2.9910278)
-
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(2.4, 2.4)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer9"]
-position = Vector2(270, 0)
-texture = ExtResource("11_5jvfg")
-
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
-motion_scale = Vector2(2.8, 2.8)
-motion_mirroring = Vector2(928, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer10"]
-position = Vector2(270, 0)
-texture = ExtResource("12_btka8")
-
-[node name="ColorRect" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 top_level = true
 position = Vector2(1186, 629)
 scale = Vector2(4.518987, 4.9695888)
 texture = ExtResource("16_eikmy")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_l4wmq")
 }

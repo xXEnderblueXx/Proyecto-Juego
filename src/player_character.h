@@ -13,6 +13,7 @@ class PlayerCharacter : public CharacterBody2D {
     GDCLASS(PlayerCharacter, CharacterBody2D)
 
 private:
+    double interaction_range = 100.0; // valor por defecto, puedes ajustarlo en el Inspector
     bool can_move = true;
     double move_speed;
     Vector2 last_direction;
@@ -22,6 +23,8 @@ protected:
     static void _bind_methods();
 
 public:
+    void set_interaction_range(double p_range);
+    double get_interaction_range() const;
     void set_can_move(bool p_can_move);
     bool get_can_move() const;
     PlayerCharacter();

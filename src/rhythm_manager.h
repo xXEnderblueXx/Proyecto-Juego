@@ -37,7 +37,7 @@ public:
 
     void _ready() override;
     void _process(double delta) override;
-    
+    Array get_all_notes() const;
     // Configuración
     void set_music_player(AudioStreamPlayer* player);
     void start_song();

@@ -33,7 +33,7 @@ func _ready() -> void:
 	timer.start()
 
 func activar():
-	print("La gallina ha sido activada")
+	print("Se ha activado la Interaccion")
 
 func _physics_process(_delta: float) -> void:
 	# 1. Movimiento Físico (Interacción con colisiones y jugador)

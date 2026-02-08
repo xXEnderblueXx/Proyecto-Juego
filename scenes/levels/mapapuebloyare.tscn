@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://clwx3suc5odgo" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_bblsx"]
 [ext_resource type="TileSet" uid="uid://dqfyav48octf8" path="res://assets/art/backgrounds/adornospuebloyare.tres" id="2_pwdp5"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="3_23ixn"]
-[ext_resource type="PackedScene" uid="uid://b8haf74r42abp" path="res://scenes/characters/NPC/Animals/NPC_Animals.tscn" id="3_l1dqm"]
+[ext_resource type="PackedScene" path="res://scenes/characters/NPC/Animals/NPC_Animals.tscn" id="3_l1dqm"]
 [ext_resource type="Texture2D" uid="uid://dyp2ebe5q3h31" path="res://assets/art/backgrounds/Animals/Chicken/Chicken.png" id="4_23ixn"]
 [ext_resource type="Texture2D" uid="uid://dca3g2pkw8sgb" path="res://assets/art/backgrounds/Animals/Cow/Cow.png" id="5_8p54v"]
 [ext_resource type="Texture2D" uid="uid://ewjv8qrntwcu" path="res://assets/art/backgrounds/Animals/Pig/Pig.png" id="6_xyuxq"]

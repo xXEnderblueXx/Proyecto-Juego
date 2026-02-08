@@ -108,6 +108,7 @@ func _on_btn_cargar_pressed():
 
 	# Crear visuales nuevas desde C++
 	var all_data = manager.get_all_notes()
+	print("DEBUG: C++ devolvió ", all_data.size(), " notas.")
 	var index = 0
 	
 	for data in all_data:

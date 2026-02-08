@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=4 uid="uid://du4pt12q45hb1"]
+[gd_scene load_steps=8 format=4 uid="uid://du4pt12q45hb1"]
 
 [ext_resource type="TileSet" uid="uid://c54ewrsw4n54k" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_sqxo2"]
 [ext_resource type="TileSet" uid="uid://dwxilkn8abqwc" path="res://assets/art/backgrounds/adornospuebloyare.tres" id="2_aghq2"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="3_vjrtq"]
+[ext_resource type="PackedScene" uid="uid://b8haf74r42abp" path="res://scenes/characters/NPC/Animals/character_body_2d.tscn" id="4_aghq2"]
+[ext_resource type="Texture2D" uid="uid://dyp2ebe5q3h31" path="res://assets/art/backgrounds/Animals/Chicken/Chicken.png" id="5_vjrtq"]
+[ext_resource type="Texture2D" uid="uid://ewjv8qrntwcu" path="res://assets/art/backgrounds/Animals/Pig/Pig.png" id="6_23ixn"]
+[ext_resource type="Texture2D" uid="uid://dca3g2pkw8sgb" path="res://assets/art/backgrounds/Animals/Cow/Cow.png" id="6_l1dqm"]
 
 [node name="mapa" type="Node2D"]
 y_sort_enabled = true
@@ -20,4 +24,113 @@ tile_map_data = PackedByteArray("AAD//yEABAADAAMAAAD//yIABAADAAAAAAD//yUABAADAAM
 tile_set = ExtResource("2_aghq2")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_vjrtq")]
-position = Vector2(450, -199)
+position = Vector2(556, 33)
+
+[node name="NPC" type="Node2D" parent="."]
+
+[node name="pollos" type="Node2D" parent="NPC"]
+
+[node name="CharacterBody2D" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(624, -1)
+velocidad = 60.0
+
+[node name="CharacterBody2D2" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(702, 15)
+textura_animal = ExtResource("5_vjrtq")
+velocidad = 60.0
+
+[node name="CharacterBody2D3" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(-269, 140)
+velocidad = 60.0
+
+[node name="CharacterBody2D4" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(266, -1)
+velocidad = 60.0
+
+[node name="CharacterBody2D5" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(-291, -57)
+velocidad = 60.0
+
+[node name="CharacterBody2D6" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(65, 376)
+velocidad = 60.0
+
+[node name="CharacterBody2D7" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(729, 312)
+velocidad = 60.0
+
+[node name="CharacterBody2D8" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(171, -28)
+velocidad = 60.0
+
+[node name="CharacterBody2D9" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(152, 711)
+velocidad = 60.0
+
+[node name="CharacterBody2D10" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(272, 802)
+textura_animal = ExtResource("5_vjrtq")
+velocidad = 60.0
+
+[node name="CharacterBody2D11" parent="NPC/pollos" instance=ExtResource("4_aghq2")]
+position = Vector2(601, 959)
+textura_animal = ExtResource("5_vjrtq")
+velocidad = 60.0
+
+[node name="vacas" type="Node2D" parent="NPC"]
+
+[node name="CharacterBody2D17" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(627, 326)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="CharacterBody2D18" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(220, 824)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="CharacterBody2D19" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(793, 454)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="CharacterBody2D20" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(121, 105)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="CharacterBody2D21" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(-148, 1084)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="CharacterBody2D22" parent="NPC/vacas" instance=ExtResource("4_aghq2")]
+position = Vector2(609, 1133)
+textura_animal = ExtResource("6_l1dqm")
+
+[node name="cerdos" type="Node2D" parent="NPC"]
+
+[node name="CharacterBody2D12" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(895, 882)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0
+
+[node name="CharacterBody2D13" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(879, 362)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0
+
+[node name="CharacterBody2D14" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(960, 292)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0
+
+[node name="CharacterBody2D15" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(-75, 405)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0
+
+[node name="CharacterBody2D16" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(-268, 832)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0
+
+[node name="CharacterBody2D17" parent="NPC/cerdos" instance=ExtResource("4_aghq2")]
+position = Vector2(-72, -56)
+textura_animal = ExtResource("6_23ixn")
+velocidad = 50.0

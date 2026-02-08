@@ -13,6 +13,7 @@ class PlayerCharacter : public CharacterBody2D {
     GDCLASS(PlayerCharacter, CharacterBody2D)
 
 private:
+    bool can_move = true;
     double move_speed;
     Vector2 last_direction;
     RayCast2D* interaction_raycast = nullptr; // Variable del rayo
@@ -21,6 +22,8 @@ protected:
     static void _bind_methods();
 
 public:
+    void set_can_move(bool p_can_move);
+    bool get_can_move() const;
     PlayerCharacter();
     ~PlayerCharacter();
 

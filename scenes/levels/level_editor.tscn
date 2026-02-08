@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://y3vvygeeup5i"]
+
+[ext_resource type="Script" uid="uid://mkhsgir228wq" path="res://scenes/levels/level_editor.gd" id="1_cxwhj"]
+[ext_resource type="AudioStream" uid="uid://b66ys0ogll66u" path="res://assets/audio/music/Boss.wav" id="2_cxwhj"]
+
+[node name="LevelEditor" type="Node2D"]
+script = ExtResource("1_cxwhj")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1280, 300)
+
+[node name="RhythmManager" type="RhythmManager" parent="."]
+process_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_cxwhj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Nombre Dificultad" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InputNombre" type="LineEdit" parent="CanvasLayer"]
+offset_left = 490.0
+offset_top = 605.0
+offset_right = 558.5625
+offset_bottom = 636.0
+placeholder_text = "facil"
+
+[node name="BtnGrabar" type="Button" parent="CanvasLayer"]
+offset_left = 316.0
+offset_top = 592.0
+offset_right = 452.0
+offset_bottom = 640.0
+text = "Grabar"
+
+[node name="BtnGuardar" type="Button" parent="CanvasLayer"]
+process_mode = 3
+offset_left = 18.0
+offset_top = 591.0
+offset_right = 282.0
+offset_bottom = 639.0
+text = "Guardar Json"
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer"]
+offset_left = 600.0
+offset_top = 602.0
+offset_right = 733.0
+offset_bottom = 625.0
+text = "Listo para grabar"
+
+[node name="BtnPausa" type="Button" parent="CanvasLayer"]
+process_mode = 3
+offset_left = 20.0
+offset_top = 536.0
+offset_right = 135.0
+offset_bottom = 584.0
+text = "Pausa"
+
+[node name="InputVelocidad" type="SpinBox" parent="CanvasLayer"]
+offset_right = 86.5625
+offset_bottom = 31.0
+min_value = 180.0
+max_value = 250.0
+step = 15.0
+value = 180.0
+
+[node name="BtnCargar" type="Button" parent="."]
+process_mode = 3
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Cargar Dificultades"
+
+[connection signal="pressed" from="CanvasLayer/BtnGrabar" to="." method="_on_btn_grabar_pressed"]
+[connection signal="pressed" from="CanvasLayer/BtnGuardar" to="." method="_on_btn_guardar_pressed"]
+[connection signal="pressed" from="CanvasLayer/BtnPausa" to="." method="_on_btn_pausa_pressed"]
+[connection signal="pressed" from="BtnCargar" to="." method="_on_btn_cargar_pressed"]

@@ -1,16 +1,15 @@
-[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://c54ewrsw4n54k"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://c54ewrsw4n54k"]
 
-[ext_resource type="Texture2D" uid="uid://733dg73dmbh5" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_vqcf5"]
-[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_rf7ay"]
+[ext_resource type="Texture2D" uid="uid://de8rmutdtayo0" path="res://assets/art/backgrounds/Tiles/Beach_Tile.png" id="1_vqcf5"]
+[ext_resource type="Texture2D" uid="uid://c8wmhsf2hvtw5" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="2_rf7ay"]
 [ext_resource type="Texture2D" uid="uid://d1cnkitrajjqf" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_mapa.png" id="3_lxj1k"]
 [ext_resource type="Texture2D" uid="uid://c08g3xaoqgc84" path="res://assets/art/backgrounds/Outdoor decoration/estatua_yare.png" id="4_cf252"]
-[ext_resource type="Texture2D" uid="uid://56x5i4vlo26d" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="5_woq64"]
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="6_pnehe"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="7_stjpc"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="8_w4k6w"]
-[ext_resource type="Texture2D" uid="uid://r8rdwg5wrm0o" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="9_s2uhd"]
-[ext_resource type="Texture2D" uid="uid://dtgyyl8aoqg7p" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="10_aox3t"]
-[ext_resource type="Texture2D" uid="uid://c0adowg7kmivd" path="res://assets/art/backgrounds/Buildings/Atlas/Room_Builder_free_16x16.png" id="11_8qk6f"]
+[ext_resource type="Texture2D" uid="uid://bv7gh6ybawdws" path="res://assets/art/backgrounds/Tiles/FarmLand_Tile.png" id="5_woq64"]
+[ext_resource type="Texture2D" uid="uid://jk5r0vtjor53" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="6_pnehe"]
+[ext_resource type="Texture2D" uid="uid://cdkg40jtje16h" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="7_stjpc"]
+[ext_resource type="Texture2D" uid="uid://dlssleb2bxpbu" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="8_w4k6w"]
+[ext_resource type="Texture2D" uid="uid://dkvtmc05416vb" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="9_s2uhd"]
+[ext_resource type="Texture2D" uid="uid://ce6dbh6k665u" path="res://assets/art/backgrounds/Tiles/Water_Tile.png" id="10_aox3t"]
 [ext_resource type="Texture2D" uid="uid://c4hc4dijtcd0e" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_caminos.png" id="12_erbon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0yjt"]
@@ -354,7 +353,6 @@ texture = ExtResource("10_aox3t")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vetjo"]
-texture = ExtResource("11_8qk6f")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0

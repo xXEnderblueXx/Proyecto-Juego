@@ -247,5 +247,5 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="InteractionRayCast" type="RayCast2D" parent="."]
-target_position = Vector2(0, 114.28571)
+target_position = Vector2(0, -14.285714)
 collide_with_areas = true

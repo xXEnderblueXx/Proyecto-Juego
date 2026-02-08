@@ -19,7 +19,7 @@ tile_map_data = PackedByteArray("AAAmADkAAAABAAUAAAAmADoAAAABAAYAAAAmAEAAAAABAAw
 tile_set = ExtResource("2_pwdp5")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_23ixn")]
-position = Vector2(680, 1744)
+position = Vector2(1199, 292)
 
 [node name="NPC" type="Node2D" parent="."]
 position = Vector2(235, 285)

@@ -79,28 +79,27 @@ _data = {
 
 [node name="menu" type="Control"]
 layout_mode = 3
-anchor_right = 0.98600006
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 15.399902
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n3mna")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 1898.0
-offset_bottom = 1194.0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+[node name="Titulo" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/Titulo"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Yare Beat"
@@ -160,109 +159,137 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "Volver"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+[node name="resolutions" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+alignment = 1
+
+[node name="900x600" type="Button" parent="MarginContainer/resolutions"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "900x600"
+
+[node name="1280×720" type="Button" parent="MarginContainer/resolutions"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "1280×720"
+
+[node name="1920x1080" type="Button" parent="MarginContainer/resolutions"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_l4wmq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uxkmo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
+text = "1920x1080"
+
+[node name="FullScream" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="FullScream_changed" type="Button" parent="MarginContainer/VBoxContainer3"]
+[node name="FullScream_changed" type="Button" parent="MarginContainer/FullScream"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "FullScream"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="MarginContainer"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="MarginContainer/Node2D"]
 offset = Vector2(300, 200)
 scale = Vector2(2.5, 2.5)
 transform = Transform2D(2.5, 0, 0, 2.5, 300, 200)
 scroll_offset = Vector2(1, 0)
 script = ExtResource("3_raexy")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer"]
 position = Vector2(270, 2)
 texture = ExtResource("5_btka8")
 offset = Vector2(1.6666718, -2)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.2, 1.2)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer2"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer2"]
 position = Vector2(270, 0)
 texture = ExtResource("6_levpg")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(3, 3)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer3"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer3"]
 position = Vector2(270, 0)
 texture = ExtResource("7_m4a6v")
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.4, 1.4)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer4"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer4"]
 position = Vector2(270, 0)
 texture = ExtResource("8_eikmy")
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(1.6, 1.6)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer5"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer5"]
 position = Vector2(270, 0)
 texture = ExtResource("9_eqd1q")
 
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(2.5, 2.5)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer6"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer6"]
 position = Vector2(270, 0)
 texture = ExtResource("10_l4wmq")
 
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(2, 2)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer7"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer7"]
 position = Vector2(270, 0)
 texture = ExtResource("11_uxkmo")
 
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(2.3, 2.3)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer8"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer8"]
 position = Vector2(263.6667, -72.33333)
 scale = Vector2(1.0143709, -0.7331258)
 texture = ExtResource("12_od6ev")
 offset = Vector2(12.009369, 2.9910278)
 
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(2.4, 2.4)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer9"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer9"]
 position = Vector2(270, 0)
 texture = ExtResource("11_5jvfg")
 
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="MarginContainer/Node2D/ParallaxBackground"]
 motion_scale = Vector2(2.8, 2.8)
 motion_mirroring = Vector2(928, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/ParallaxBackground/ParallaxLayer10"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/Node2D/ParallaxBackground/ParallaxLayer10"]
 position = Vector2(270, 0)
 texture = ExtResource("12_btka8")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
 visible = false
+top_level = true
 position = Vector2(1186, 629)
 scale = Vector2(4.518987, 4.9695888)
 texture = ExtResource("16_eikmy")
@@ -275,9 +302,16 @@ autoplay = "fade_out"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_l4wmq")
+bus = &"SFX"
 script = ExtResource("18_uxkmo")
 
 [connection signal="pressed" from="MarginContainer/menuInicio/inicio" to="." method="_on_inicio_pressed"]
 [connection signal="pressed" from="MarginContainer/menuInicio/opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="MarginContainer/menuInicio/salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="MarginContainer/menuOpciones/video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="MarginContainer/menuOpciones/audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="MarginContainer/menuOpciones/volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="MarginContainer/resolutions/900x600" to="." method="_on_x_600_pressed"]
+[connection signal="pressed" from="MarginContainer/resolutions/1280×720" to="." method="_on__pressed"]
+[connection signal="pressed" from="MarginContainer/resolutions/1920x1080" to="." method="_on_x_1080_pressed"]
+[connection signal="pressed" from="MarginContainer/FullScream/FullScream_changed" to="." method="_on_full_scream_changed_pressed"]

@@ -72,6 +72,7 @@ scale = Vector2(-2.941972, 0.4415619)
 shape = SubResource("RectangleShape2D_dyjti")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
+visible = false
 top_level = true
 position = Vector2(1186, 629)
 scale = Vector2(4.518987, 4.9695888)

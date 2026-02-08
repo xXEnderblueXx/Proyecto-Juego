@@ -14,6 +14,15 @@ config/name="JuegoYare"
 run/main_scene="uid://bs4o10qjkjgng"
 config/features=PackedStringArray("4.5")
 
+[autoload]
+
+CONFIGMANAGER="*res://scripts/ConfigManager.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/aspect="expand"
+
 [gui]
 
 theme/custom="uid://bhehbijodln4u"

@@ -20,7 +20,6 @@ CONFIGMANAGER="*res://scripts/ConfigManager.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/aspect="expand"
 
 [gui]

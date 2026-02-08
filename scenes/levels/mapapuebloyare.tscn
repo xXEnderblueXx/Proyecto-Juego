@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://p7u02kysb6gy"]
+[gd_scene load_steps=4 format=4 uid="uid://du4pt12q45hb1"]
 
-[ext_resource type="TileSet" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_sqxo2"]
-[ext_resource type="TileSet" path="res://assets/art/backgrounds/adornospuebloyare.tres" id="2_aghq2"]
+[ext_resource type="TileSet" uid="uid://c54ewrsw4n54k" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_sqxo2"]
+[ext_resource type="TileSet" uid="uid://dwxilkn8abqwc" path="res://assets/art/backgrounds/adornospuebloyare.tres" id="2_aghq2"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="3_vjrtq"]
 
 [node name="mapa" type="Node2D"]

@@ -31,7 +31,7 @@ void PlayerCharacter::_physics_process(double delta) {
 
     Input* input = Input::get_singleton();
 
-    // 1. SISTEMA DE BLOQUEO (Para diálogos)
+    // 1. SISTEMA DE BLOQUEO (Para diálogos, cinemáticas, etc)
     if (!can_move) {
         set_velocity(Vector2(0, 0));
         move_and_slide();
@@ -41,6 +41,7 @@ void PlayerCharacter::_physics_process(double delta) {
     // 2. MOVIMIENTO (4 Direcciones estrictas)
     Vector2 input_dir = Vector2(0, 0);
 
+    // Nota: Usar get_vector es más moderno, pero tu lógica manual está bien para 4 direcciones
     if (input->is_action_pressed("ui_right")) {
         input_dir.x = 1;
     } else if (input->is_action_pressed("ui_left")) {
@@ -56,19 +57,25 @@ void PlayerCharacter::_physics_process(double delta) {
     move_and_slide();
 
     // 3. ACTUALIZAR RAYCAST (Dirección)
+    // Solo actualizamos la dirección si nos estamos moviendo
     if (velocity.length() > 0) {
         last_direction = velocity.normalized();
     }
 
     if (interaction_raycast) {
-        // 100px para asegurar que alcance los objetos
+        // Multiplicamos por 100 (o 50) según el tamaño de tus tiles
+        // Asegúrate de que interaction_raycast esté inicializado en _ready()
         interaction_raycast->set_target_position(last_direction * 100);
     }
 
-    // 4. INTERACCIÓN (El gatillo)
-    if (input->is_action_just_pressed("interact")) {
+    // 4. INTERACCIÓN (ELIMINADO AQUÍ)
+    // Ya no detectamos "interact" aquí porque lo hace GDScript en _input.
+    // Esto evita que se ejecute dos veces o se cancele a sí mismo.
+    
+    /* if (input->is_action_just_pressed("interact")) {
         interact();
     }
+    */
 }
 
 void PlayerCharacter::interact() {

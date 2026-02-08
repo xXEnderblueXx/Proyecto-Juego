@@ -16,6 +16,9 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
+
+
+# Aquí iría tu lógica: abrir cofre, diálogo, etc.
 var direccion: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -28,6 +31,9 @@ func _ready() -> void:
 	timer.wait_time = tiempo_de_cambio
 	timer.timeout.connect(_decidir_nuevo_rumbo)
 	timer.start()
+
+func activar():
+	print("La gallina ha sido activada")
 
 func _physics_process(_delta: float) -> void:
 	# 1. Movimiento Físico (Interacción con colisiones y jugador)

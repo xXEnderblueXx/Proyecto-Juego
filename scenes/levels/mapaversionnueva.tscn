@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://cfju310t1u5gj"]
+[gd_scene load_steps=10 format=4 uid="uid://dcb3ucun0i4op"]
 
-[ext_resource type="TileSet" uid="uid://kc38fkbx5ix5" path="res://assets/art/backgrounds/suelitomapaversionnueva.tres" id="1_wnrbf"]
-[ext_resource type="TileSet" uid="uid://by5aot4y2htib" path="res://assets/art/backgrounds/adornossmapaversionnueva.tres" id="2_7xfg7"]
+[ext_resource type="TileSet" path="res://assets/art/backgrounds/suelitomapaversionnueva.tres" id="1_wnrbf"]
+[ext_resource type="TileSet" path="res://assets/art/backgrounds/adornossmapaversionnueva.tres" id="2_7xfg7"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="3_7xfg7"]
 [ext_resource type="Script" uid="uid://cn0q70x5knwxk" path="res://scenes/levels/area_2d.gd" id="4_rmkd1"]
 [ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="5_dyjti"]
@@ -62,13 +62,14 @@ tile_set = ExtResource("2_7xfg7")
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_7xfg7")]
 position = Vector2(481, 587)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("4_rmkd1")
 next_map = "res://scenes/levels/iglesia_lista.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(486, 5.999998)
-scale = Vector2(-2.941972, 0.4415619)
+rotation = -3.1415927
+scale = Vector2(2.941972, -0.4415619)
 shape = SubResource("RectangleShape2D_dyjti")
 
 [node name="ColorRect" type="Sprite2D" parent="."]
@@ -83,5 +84,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_l4wmq")
 }
 autoplay = "fade_out"
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

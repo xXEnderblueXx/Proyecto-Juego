@@ -1,5 +1,6 @@
-extends Area2D
-
+extends StaticBody2D
+func activar():
+		print("¡FUNCIONÓ! Interacción exitosa con el Área.")
 @export var next_map: String
 
 

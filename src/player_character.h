@@ -1,34 +1,42 @@
 #ifndef PLAYER_CHARACTER_H
 #define PLAYER_CHARACTER_H
 
+// 1. ZONA DE INCLUDES (Todo esto va FUERA del namespace)
 #include <godot_cpp/classes/character_body2d.hpp>
 #include <godot_cpp/classes/input.hpp>
+#include <godot_cpp/classes/ray_cast2d.hpp> // <--- Aquí está perfecto
 
-namespace godot {
+// 2. AHORA SÍ ABRES EL NAMESPACE
+namespace godot { 
 
 class PlayerCharacter : public CharacterBody2D {
     GDCLASS(PlayerCharacter, CharacterBody2D)
 
 private:
-    double move_speed; // Velocidad de movimiento
-    Vector2 last_direction; 
+    bool can_move = true;
+    double move_speed;
+    Vector2 last_direction;
+    RayCast2D* interaction_raycast = nullptr; // Variable del rayo
+
 protected:
     static void _bind_methods();
 
 public:
+    void set_can_move(bool p_can_move);
+    bool get_can_move() const;
     PlayerCharacter();
     ~PlayerCharacter();
 
-    void _physics_process(double delta) override; // Esto es como para que se actualice cada frame de física
+    void _physics_process(double delta) override;
 
-    // Para poder cambiar la velocidad desde el editor de Godot o desde otros scripts
     void set_move_speed(const double p_speed);
     double get_move_speed() const;
-
-    //Getter para VO JESUS xdxdxd, este lo lees desde GDScript
     Vector2 get_last_direction() const;
+
+    void interact();           // Tu nueva función
+    void _ready() override;    // La corrección que hicimos antes
 };
 
-}
+} // Cierre del namespace godot
 
-#endif
+#endif // Cierre del ifndef

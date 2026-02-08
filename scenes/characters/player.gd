@@ -22,6 +22,13 @@ func _process(_delta: float) -> void:
 		anim_tree.set("parameters/walk/blend_position", move_dir)
 		anim_tree.set("parameters/idle/blend_position", move_dir)
 
+func _input(event: InputEvent) -> void:
+	# Chivato 1: Nos dice si el teclado funciona
+	if event is InputEventKey and event.pressed:
+			print("Tecla presionada: ", event.as_text()) 
+
+	if event.is_action_pressed("interact"):
+			interact()
 #extends PlayerCharacter
 #
 #@onready var animationplayer=$AnimationPlayer

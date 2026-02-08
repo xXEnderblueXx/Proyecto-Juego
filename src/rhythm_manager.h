@@ -34,7 +34,7 @@ protected:
 public:
     RhythmManager();
     ~RhythmManager();
-
+    void update_note_time(int id, double new_time);
     void _ready() override;
     void _process(double delta) override;
     Array get_all_notes() const;

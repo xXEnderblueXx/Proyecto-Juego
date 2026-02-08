@@ -28,6 +28,7 @@ func _on_volver_pressed() -> void:
 	inicio.visible = true
 	opciones.process_mode = Node.PROCESS_MODE_DISABLED
 	opciones.visible = false
+	_on_video_pressed()
 
 
 func _on_full_scream_changed_pressed() -> void:

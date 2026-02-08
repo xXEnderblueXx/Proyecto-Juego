@@ -232,7 +232,7 @@ region_enabled = true
 region_rect = Rect2(-2.0168762, -35.726624, 5119.0195, 6172.1914)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2.9, 2.9)
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

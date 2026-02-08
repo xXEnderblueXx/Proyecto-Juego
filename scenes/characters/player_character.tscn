@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dehyroj865ov3" path="res://scenes/levels/dieguito sprite civil.png" id="1_5l4cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
-size = Vector2(126.857086, 41.785717)
+size = Vector2(126.857086, 92.32143)
 
 [sub_resource type="Animation" id="Animation_3hfu2"]
 length = 0.001
@@ -215,11 +215,12 @@ states/walk/position = Vector2(613, 97)
 
 [node name="PlayerCharacter" type="PlayerCharacter"]
 move_speed = 70.0
+interaction_range = 200.0
 scale = Vector2(0.07, 0.07)
 script = ExtResource("1_3hfu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14.285715, 14.285714)
+position = Vector2(14.285716, -10.982142)
 shape = SubResource("RectangleShape2D_3hfu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

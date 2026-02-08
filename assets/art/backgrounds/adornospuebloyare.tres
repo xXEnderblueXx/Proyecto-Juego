@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=38 format=3 uid="uid://b6lur8rx3eqni"]
+[gd_resource type="TileSet" load_steps=38 format=3 uid="uid://dwxilkn8abqwc"]
 
 [ext_resource type="Texture2D" uid="uid://c1a7bnwkwhlha" path="res://assets/art/backgrounds/Buildings/puesto_pasteles_azul.png" id="1_4bhsv"]
 [ext_resource type="Texture2D" uid="uid://c08g3xaoqgc84" path="res://assets/art/backgrounds/Outdoor decoration/estatua_yare.png" id="3_tyaha"]

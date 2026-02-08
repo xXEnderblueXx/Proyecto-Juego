@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://rct656chqofr"]
+
+[ext_resource type="Script" uid="uid://2prxalgyuusx" path="res://scenes/levels/note.gd" id="1_epybe"]
+
+[node name="Note" type="Node2D"]
+script = ExtResource("1_epybe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.09, 0.09)

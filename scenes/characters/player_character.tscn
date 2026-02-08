@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dehyroj865ov3" path="res://scenes/levels/dieguito sprite civil.png" id="1_5l4cv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
-size = Vector2(126.857086, 84.64286)
+size = Vector2(126.857086, 41.785717)
 
 [sub_resource type="Animation" id="Animation_3hfu2"]
 length = 0.001
@@ -219,7 +219,7 @@ scale = Vector2(0.07, 0.07)
 script = ExtResource("1_3hfu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.2856884, -14.821427)
+position = Vector2(14.285715, 14.285714)
 shape = SubResource("RectangleShape2D_3hfu2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -247,5 +247,6 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="InteractionRayCast" type="RayCast2D" parent="."]
-target_position = Vector2(0, -14.285714)
+position = Vector2(0, -71.42857)
+target_position = Vector2(0, -28.571426)
 collide_with_areas = true

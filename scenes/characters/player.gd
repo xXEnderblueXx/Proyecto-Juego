@@ -29,6 +29,7 @@ func _input(event: InputEvent) -> void:
 			print("Tecla presionada: ", event.as_text()) 
 
 	if event.is_action_pressed("interact"):
+			print("Accion de interact detecta en gdscript")
 			interact()
 #extends PlayerCharacter
 #

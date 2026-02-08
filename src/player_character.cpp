@@ -78,7 +78,33 @@ void PlayerCharacter::_physics_process(double delta) {
     */
 }
 
+
+
 void PlayerCharacter::interact() {
+    if (!interaction_raycast) return;
+
+    interaction_raycast->force_raycast_update();
+
+    if (interaction_raycast->is_colliding()) {
+        Object* collider = interaction_raycast->get_collider();
+        
+        // --- CHIVATO DE C++ ---
+        if (collider) {
+            // Esto imprimirá el nombre del objeto con el que choca en la consola de Godot
+            UtilityFunctions::print("Raycast choco con: ", collider->get_class());
+            
+            if (collider->has_method("activar")) {
+                collider->call("activar");
+                UtilityFunctions::print("Metodo 'activar' llamado con exito!");
+            } else {
+                UtilityFunctions::print("El objeto no tiene el metodo 'activar'");
+            }
+        }
+    } else {
+        UtilityFunctions::print("El Raycast no esta chocando con NADA.");
+    }
+}
+/*  void PlayerCharacter::interact() {
     if (!interaction_raycast) return;
 
     // CRÍTICO: Forzamos actualización para precisión instantánea
@@ -95,7 +121,7 @@ void PlayerCharacter::interact() {
         }
     }
 }
-
+*/
 // --- GETTERS Y SETTERS ---
 void PlayerCharacter::set_can_move(bool p_value) { can_move = p_value; }
 bool PlayerCharacter::get_can_move() const { return can_move; }

@@ -9,7 +9,7 @@ func _ready() -> void:
 	opciones.visible = false
 
 func _on_inicio_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/mapaversionnueva.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/mapapuebloyare.tscn")
 
 
 func _on_opciones_pressed() -> void:

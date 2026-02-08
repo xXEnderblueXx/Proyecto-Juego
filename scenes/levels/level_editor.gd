@@ -1,19 +1,24 @@
 extends Node2D
 
-# Referencias a los nodos
+# Referencias
 @onready var manager = $RhythmManager
 @onready var audio = $AudioStreamPlayer
 @onready var input_nombre = $CanvasLayer/InputNombre
 @onready var status_label = $CanvasLayer/StatusLabel
-@onready var input_velocidad = $CanvasLayer/InputVelocidad
+@onready var time_slider = $CanvasLayer/TimeSlider
+@onready var time_label = $CanvasLayer/TimeLabel
 @onready var btn_pausa = $CanvasLayer/BtnPausa
-@onready var spawn_point = $SpawnPoint
 
-# Pre-carga de la escena de la nota
+# Configuración Visual
 var note_scene = preload("res://scenes/levels/note.tscn") 
+var pixels_per_second = 300.0 # Zoom de la línea de tiempo (Editable)
+var target_x = 100.0 # Dónde está el golpe (Izquierda)
 
+# Variables de Estado
 var base_path = "res://scenes/levels/recordings/" 
-var is_paused = false 
+var is_dragging_slider = false
+var duration = 0.0
+var loaded_notes_visuals = [] # Array para guardar referencias a los nodos visuales
 
 func _ready():
 	# Crear carpeta si no existe
@@ -23,143 +28,142 @@ func _ready():
 
 	manager.set_music_player(audio)
 	
-	# Conectamos la señal para DIBUJAR las notas
-	if manager.has_signal("spawn_note"):
-		manager.connect("spawn_note", _on_spawn_note_visual)
+	# Configurar Slider
+	time_slider.drag_started.connect(_on_slider_drag_started)
+	time_slider.drag_ended.connect(_on_slider_drag_ended)
+	time_slider.value_changed.connect(_on_slider_seek)
 	
-	status_label.text = "Escribe dificultad, GRABAR para crear."
+	status_label.text = "Carga un nivel para ver la línea de tiempo."
 
-# --- BOTÓN GRABAR ---
-func _on_btn_grabar_pressed():
-	if input_nombre.text == "":
-		status_label.text = "⚠️ ¡Escribe un nombre primero!"
-		return
+# --- PROCESO PRINCIPAL (EL CORAZÓN DEL EDITOR) ---
+func _process(delta):
+	# 1. Actualizar Slider y Texto (Solo si no lo estamos arrastrando)
+	if audio.stream and not is_dragging_slider:
+		var current_time = audio.get_playback_position()
+		time_slider.value = current_time
+		update_time_label(current_time)
+
+	# 2. ACTUALIZAR POSICIÓN DE TODAS LAS NOTAS VISUALES
+	# Esto ocurre en cada frame. Recalculamos dónde debe estar cada nota.
+	var audio_time = audio.get_playback_position()
+	
+	# Si el audio no está sonando pero estamos en pausa, usamos el valor del slider
+	if not audio.playing and audio.stream:
+		audio_time = time_slider.value
+
+	for note in loaded_notes_visuals:
+		# Si la nota fue borrada (queue_free), saltarla
+		if not is_instance_valid(note): continue
 		
-	status_label.text = "🔴 GRABANDO: " + input_nombre.text
-	
-	manager.recording_mode = true
-	manager.start_song()
-	
-	get_viewport().set_input_as_handled()
+		var note_time = note.get_meta("hit_time")
+		
+		# --- LA FÓRMULA MAESTRA ---
+		# Posición = Meta + (DiferenciaDeTiempo * Zoom)
+		var new_x = target_x + (note_time - audio_time) * pixels_per_second
+		
+		note.position.x = new_x
+		note.position.y = 300 # O la altura según su tipo
 
-# --- BOTÓN GUARDAR ---
-func _on_btn_guardar_pressed():
-	if input_nombre.text == "":
-		status_label.text = "⚠️ No hay nombre de archivo."
-		return
+		# Optimización: Ocultar si está muy lejos de la pantalla
+		note.visible = (new_x > -100 and new_x < 1300)
 
-	var file_name = "boss_" + input_nombre.text + ".json"
-	var full_path = base_path + file_name
-	
-	manager.save_recording(full_path)
-	status_label.text = "✅ ¡GUARDADO! " + file_name
-
-# --- BOTÓN CARGAR ---
+# --- CARGAR NIVEL Y DIBUJAR TODO ---
 func _on_btn_cargar_pressed():
-	if input_nombre.text == "":
-		status_label.text = "⚠️ Escribe nombre para cargar."
-		return
-
+	# ... (Validaciones de archivo igual que antes) ...
 	var file_name = "boss_" + input_nombre.text + ".json"
 	var full_path = base_path + file_name
 	
 	if not FileAccess.file_exists(full_path):
-		status_label.text = "❌ Archivo no existe."
+		status_label.text = "❌ No existe."
 		return
 
+	# 1. Cargar datos en C++
 	manager.load_level(full_path)
-	status_label.text = "📂 CARGADO. Jugando..."
 	
-	manager.recording_mode = false 
-	manager.start_song()
+	# 2. Configurar Slider con la duración de la canción
+	if audio.stream:
+		duration = audio.stream.get_length()
+		time_slider.max_value = duration
+		time_slider.step = 0.01 # Precisión de centésimas
 
-# --- BOTÓN PAUSA ---
-func _on_btn_pausa_pressed():
-	is_paused = !is_paused 
-	
-	if is_paused:
-		get_tree().paused = true 
-		audio.stream_paused = true
-		manager.set_process(false) 
-		$CanvasLayer/BtnPausa.text = "▶️ REANUDAR"
-		status_label.text = "⏸️ PAUSADO"
-	else:
-		get_tree().paused = false 
-		audio.stream_paused = false
-		manager.set_process(true)
-		$CanvasLayer/BtnPausa.text = "⏸️ PAUSA"
-		status_label.text = "🟢 SIGUE..."
-	
-	$CanvasLayer/BtnPausa.release_focus()
+	# 3. LIMPIEZA: Borrar notas viejas visuales
+	for n in loaded_notes_visuals:
+		if is_instance_valid(n): n.queue_free()
+	loaded_notes_visuals.clear()
 
-# --- DIBUJAR LAS NOTAS (LÓGICA MATEMÁTICA CORREGIDA) ---
-func _on_spawn_note_visual(type, speed_from_cpp, hit_time, id):
-	var new_note = note_scene.instantiate()
-	add_child(new_note)
+	# 4. GENERACIÓN MASIVA: Crear todas las notas visuales
+	var all_data = manager.get_all_notes() # ¡Usamos la nueva función de C++!
+	var index = 0
 	
-	# 1. Definir posiciones
-	var target_x = 100 
-	var spawn_x = 1280 
-	if spawn_point: 
-		spawn_x = spawn_point.position.x
-	
-	# 2. CALCULAR VELOCIDAD Y POSICIÓN (Separado por modos)
-	var dist_total = spawn_x - target_x
-	var velocidad_pixels = 0.0
-	var tiempo_restante = 0.0
-	
-	if speed_from_cpp > 0:
-		# --- MODO JUGAR/CARGAR ---
-		# C++ manda TIEMPO (segundos que tarda en llegar, ej: 2.0s)
-		velocidad_pixels = dist_total / speed_from_cpp
+	for data in all_data:
+		var new_note = note_scene.instantiate()
+		add_child(new_note)
 		
-		# Ajuste fino de posición:
-		if hit_time > 0:
-			var current_pos = audio.get_playback_position()
-			tiempo_restante = hit_time - current_pos
-		else:
-			tiempo_restante = speed_from_cpp
-			
-		# Aplicar la posición matemática exacta
-		new_note.position.x = target_x + (tiempo_restante * velocidad_pixels)
+		var type = int(data["type"])
+		var time = float(data["time"])
 		
-	else:
-		# --- MODO GRABAR ---
-		# C++ manda 0. Usamos la velocidad directa del Input (ej: 500 px/seg)
-		velocidad_pixels = input_velocidad.value
+		# Configuramos datos
+		new_note.set_meta("id", index)
+		new_note.set_meta("hit_time", time) # Guardamos el tiempo original
+		new_note.setup(type, 0, time) # Velocidad 0 porque la controlamos nosotros
 		
-		# Al grabar, la nota nace en el spawn y viaja normal
-		new_note.position.x = spawn_x
-
-	new_note.position.y = 300 
+		loaded_notes_visuals.append(new_note)
+		index += 1
+		
+	status_label.text = "timeline cargada. Arrastra la barra."
 	
-	# Guardamos ID y configuramos
-	new_note.set_meta("id", id) 
-	new_note.setup(type, velocidad_pixels, hit_time)
+	# Pausamos automáticamente al cargar para editar tranquilo
+	_pausar_juego()
 
-# --- INPUTS ---
-func _process(_delta):
-	if manager.recording_mode:
-		
-		# Enviamos 4 argumentos dummy (-1 id, 0 time)
-		# Nota: Ya no pasamos la velocidad aquí porque _on_spawn_note_visual la lee directo del input
-		
-		if Input.is_action_just_pressed("ui_left"): 
-			manager.register_input(0)
-			_on_spawn_note_visual(0, 0, 0, -1) 
+# --- CONTROL DEL SLIDER (BUSCADOR) ---
+func _on_slider_drag_started():
+	is_dragging_slider = true
 
-		elif Input.is_action_just_pressed("ui_down"): 
-			manager.register_input(1)
-			_on_spawn_note_visual(1, 0, 0, -1) 
+func _on_slider_drag_ended(value_changed):
+	is_dragging_slider = false
+	# Al soltar, saltamos al segundo exacto
+	audio.seek(time_slider.value)
 
-		elif Input.is_action_just_pressed("ui_up"):   
-			manager.register_input(2)
-			_on_spawn_note_visual(2, 0, 0, -1) 
+func _on_slider_seek(value):
+	# Si arrastramos, actualizamos la etiqueta tiempo real
+	update_time_label(value)
+	
+	# Si estamos pausados, forzamos actualización visual de notas aquí también
+	if not audio.playing:
+		pass # <--- AGREGAMOS ESTO. Significa "No hagas nada aquí, continúa".
+		# El _process se encarga de mover las notas, así que el pass es suficiente.
+# --- UTILIDADES ---
+func _pausar_juego():
+	audio.stream_paused = true
+	get_tree().paused = true
+	btn_pausa.text = "▶️ PLAY"
 
-		elif Input.is_action_just_pressed("ui_right"): 
-			manager.register_input(3)
-			_on_spawn_note_visual(3, 0, 0, -1) 
+func update_time_label(time):
+	var mins = int(time / 60)
+	var secs = int(time) % 60
+	var mills = int((time - int(time)) * 100)
+	time_label.text = "%02d:%02d:%02d" % [mins, secs, mills]
 
-		elif Input.is_action_just_pressed("interact"): 
-			manager.register_input(4)
-			_on_spawn_note_visual(4, 0, 0, -1)
+# --- EDICIÓN (ARRASTRAR NOTAS) ---
+# Llamado desde Note.gd cuando sueltas una nota
+func notify_note_moved(note_node):
+	var id = note_node.get_meta("id")
+	
+	# Matemática Inversa para hallar el nuevo tiempo
+	# PosX = Target + (NoteTime - AudioTime) * PPS
+	# (PosX - Target) / PPS = NoteTime - AudioTime
+	# NoteTime = ((PosX - Target) / PPS) + AudioTime
+	
+	var audio_time = time_slider.value
+	var offset_x = note_node.position.x - target_x
+	var time_diff = offset_x / pixels_per_second
+	
+	var new_time = audio_time + time_diff
+	
+	# Actualizar C++
+	manager.update_note_time(id, new_time)
+	
+	# Actualizar el metadato visual también para que no salte
+	note_node.set_meta("hit_time", new_time)
+	
+	status_label.text = "Nota movida a: " + str(snapped(new_time, 0.01))

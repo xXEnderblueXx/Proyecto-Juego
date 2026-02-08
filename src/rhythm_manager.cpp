@@ -10,6 +10,10 @@
 
 using namespace godot;
 
+Array RhythmManager::get_all_notes() const {
+    return level_notes;
+}
+
 RhythmManager::RhythmManager() {
     recording_mode = false; 
     note_scroll_speed = 2.0; // Valor por defecto
@@ -119,6 +123,7 @@ void RhythmManager::set_recording_mode(bool p_value) { recording_mode = p_value;
 bool RhythmManager::get_recording_mode() const { return recording_mode; }
 
 void RhythmManager::_bind_methods() {
+    ClassDB::bind_method(D_METHOD("get_all_notes"), &RhythmManager::get_all_notes);
     ClassDB::bind_method(D_METHOD("set_music_player", "player"), &RhythmManager::set_music_player);
     ClassDB::bind_method(D_METHOD("start_song"), &RhythmManager::start_song);
     

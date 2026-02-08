@@ -1,14 +1,14 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://cefhpxqykiwl3"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://clwx3suc5odgo"]
 
-[ext_resource type="Texture2D" uid="uid://d1cnkitrajjqf" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_mapa.png" id="1_x1xg3"]
-[ext_resource type="Texture2D" uid="uid://c4hc4dijtcd0e" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_caminos.png" id="2_xl87e"]
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="3_cpegy"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="4_m1s1g"]
-[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="5_vogjd"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_8hvll"]
+[ext_resource type="Texture2D" uid="uid://d1cnkitrajjqf" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_mapa.png" id="1_o1cfg"]
+[ext_resource type="Texture2D" uid="uid://c4hc4dijtcd0e" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_caminos.png" id="2_fm6jp"]
+[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="3_yj23j"]
+[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="4_0jale"]
+[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="5_vbmaq"]
+[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_pa510"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mxpa"]
-texture = ExtResource("1_x1xg3")
+texture = ExtResource("1_o1cfg")
 4:4/0 = 0
 5:4/0 = 0
 6:4/0 = 0
@@ -121,7 +121,7 @@ texture = ExtResource("1_x1xg3")
 14:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qau3i"]
-texture = ExtResource("2_xl87e")
+texture = ExtResource("2_fm6jp")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -160,15 +160,15 @@ texture = ExtResource("2_xl87e")
 5:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xkf7j"]
-texture = ExtResource("3_cpegy")
+texture = ExtResource("3_yj23j")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkkq8"]
-texture = ExtResource("4_m1s1g")
+texture = ExtResource("4_0jale")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2tmo"]
-texture = ExtResource("5_vogjd")
+texture = ExtResource("5_vbmaq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -187,7 +187,7 @@ texture = ExtResource("5_vogjd")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcbar"]
-texture = ExtResource("6_8hvll")
+texture = ExtResource("6_pa510")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

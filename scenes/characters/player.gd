@@ -5,7 +5,8 @@ extends PlayerCharacter
 
 func _ready() -> void:
 	anim_tree.active = true
-
+	if $InteractionRayCast:
+		$InteractionRayCast.add_exception(self)
 func _process(_delta: float) -> void:
 	var current_velocity = velocity 
 

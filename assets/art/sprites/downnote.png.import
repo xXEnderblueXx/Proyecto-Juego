@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dog4uw6g811cr"
-path="res://.godot/imported/spre_free_back_2.png-101556d5283b18b425cd3bafaac97c51.ctex"
+uid="uid://bo1sahcufxf3q"
+path="res://.godot/imported/downnote.png-c1f0c5b1b0e17bed6c4731acf2441886.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_2.png"
-dest_files=["res://.godot/imported/spre_free_back_2.png-101556d5283b18b425cd3bafaac97c51.ctex"]
+source_file="res://assets/art/sprites/downnote.png"
+dest_files=["res://.godot/imported/downnote.png-c1f0c5b1b0e17bed6c4731acf2441886.ctex"]
 
 [params]
 

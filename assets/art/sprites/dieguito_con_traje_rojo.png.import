@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ycw4blg71cp"
-path="res://.godot/imported/spre_free_back_0.png-200dfac9eb0182c0e8b3b0a9e7f0138a.ctex"
+uid="uid://ogb3xqb32u3l"
+path="res://.godot/imported/dieguito_con_traje_rojo.png-d763e05fb98d440b13904e21f94da1b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_0.png"
-dest_files=["res://.godot/imported/spre_free_back_0.png-200dfac9eb0182c0e8b3b0a9e7f0138a.ctex"]
+source_file="res://assets/art/sprites/dieguito_con_traje_rojo.png"
+dest_files=["res://.godot/imported/dieguito_con_traje_rojo.png-d763e05fb98d440b13904e21f94da1b0.ctex"]
 
 [params]
 

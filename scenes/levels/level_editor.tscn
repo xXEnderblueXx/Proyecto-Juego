@@ -78,10 +78,10 @@ text = "Listo para grabar"
 metadata/_edit_use_anchors_ = true
 
 [node name="InputVelocidad" type="SpinBox" parent="CanvasLayer"]
-offset_left = 152.0
-offset_top = 525.0
-offset_right = 238.5625
-offset_bottom = 556.0
+offset_left = 177.0
+offset_top = 520.0
+offset_right = 263.5625
+offset_bottom = 551.0
 min_value = 250.0
 max_value = 250.0
 step = 15.0

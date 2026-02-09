@@ -5,6 +5,41 @@
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_hxqbr")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Yare" type="Button" parent="CanvasLayer2"]
+offset_left = 411.0
+offset_top = 467.0
+offset_right = 568.0
+offset_bottom = 515.0
+text = "YARE
+"
+
+[node name="Dificil" type="Button" parent="CanvasLayer2"]
+offset_left = 411.0
+offset_top = 417.0
+offset_right = 568.0
+offset_bottom = 465.0
+text = "Dificil"
+
+[node name="Facil" type="Button" parent="CanvasLayer2"]
+offset_left = 412.0
+offset_top = 317.0
+offset_right = 566.0
+offset_bottom = 365.0
+text = "Facil
+"
+
+[node name="Medio" type="Button" parent="CanvasLayer2"]
+offset_left = 412.0
+offset_top = 367.0
+offset_right = 567.0
+offset_bottom = 415.0
+text = "Medio
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="RhythmManager" type="RhythmManager" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

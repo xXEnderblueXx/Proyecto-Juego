@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://nw36i6aw32y5"]
+[gd_scene load_steps=26 format=3 uid="uid://nw36i6aw32y5"]
 
 [ext_resource type="Script" uid="uid://dlfqrgtj7lxk0" path="res://scenes/characters/player.gd" id="1_3hfu2"]
 [ext_resource type="Texture2D" uid="uid://dehyroj865ov3" path="res://scenes/levels/dieguito sprite civil.png" id="1_5l4cv"]
+[ext_resource type="PackedScene" uid="uid://j6sdh5jcvq5c" path="res://scenes/ui/menuUI_Playing.tscn" id="3_mjudt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
 size = Vector2(126.857086, 92.85715)
@@ -234,6 +235,9 @@ region_rect = Rect2(-2.0168762, -35.726624, 5119.0195, 6172.1914)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.3, 2.3)
 position_smoothing_enabled = true
+
+[node name="menu" parent="Camera2D" instance=ExtResource("3_mjudt")]
+scale = Vector2(5, 5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

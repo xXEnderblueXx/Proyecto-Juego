@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=13 format=3 uid="uid://drq8t1svk767c"]
 
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_j53be"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_snigc"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_b7h0o"]
+[ext_resource type="Texture2D" uid="uid://jk5r0vtjor53" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="1_j53be"]
+[ext_resource type="Texture2D" uid="uid://cdkg40jtje16h" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="2_snigc"]
+[ext_resource type="Texture2D" uid="uid://dlssleb2bxpbu" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="3_b7h0o"]
 [ext_resource type="Texture2D" uid="uid://dsucq4ck2lmml" path="res://assets/art/backgrounds/Tiles/baldosa_para_iglesia.png" id="4_8g21q"]
 [ext_resource type="Texture2D" uid="uid://c4hc4dijtcd0e" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_caminos.png" id="5_lmxmo"]
 [ext_resource type="Texture2D" uid="uid://d1cnkitrajjqf" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_mapa.png" id="6_jo1pr"]

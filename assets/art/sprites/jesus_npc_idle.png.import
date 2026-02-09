@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk0t2k0pxxbd7"
-path="res://.godot/imported/spre_free_back_5.png-a95379b21fe3310f4ee0a3122d0d1ba3.ctex"
+uid="uid://b4q4wjc5hbirq"
+path="res://.godot/imported/jesus_npc_idle.png-54ded8658420eaafd36e318610097120.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/ParalaxBackground/spre_free_back_5.png"
-dest_files=["res://.godot/imported/spre_free_back_5.png-a95379b21fe3310f4ee0a3122d0d1ba3.ctex"]
+source_file="res://assets/art/sprites/jesus_npc_idle.png"
+dest_files=["res://.godot/imported/jesus_npc_idle.png-54ded8658420eaafd36e318610097120.ctex"]
 
 [params]
 

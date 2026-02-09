@@ -216,7 +216,6 @@ states/walk/position = Vector2(613, 97)
 [node name="PlayerCharacter" type="PlayerCharacter"]
 move_speed = 70.0
 interaction_range = 200.0
-scale = Vector2(0.07, 0.07)
 script = ExtResource("1_3hfu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -233,7 +232,7 @@ region_enabled = true
 region_rect = Rect2(-2.0168762, -35.726624, 5119.0195, 6172.1914)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.9, 2.9)
+zoom = Vector2(2.3, 2.3)
 position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -248,6 +247,6 @@ parameters/idle/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0, 0)
 
 [node name="InteractionRayCast" type="RayCast2D" parent="."]
-position = Vector2(0, -71.42857)
-target_position = Vector2(0, -28.571426)
+position = Vector2(0, -39)
+target_position = Vector2(0, -41.666664)
 collide_with_areas = true

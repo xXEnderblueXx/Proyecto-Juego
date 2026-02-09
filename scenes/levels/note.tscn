@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://rct656chqofr"]
 
 [ext_resource type="Script" uid="uid://2prxalgyuusx" path="res://scenes/levels/note.gd" id="1_epybe"]
-[ext_resource type="Texture2D" uid="uid://bv8avr3bhgei5" path="res://assets/art/sprites/leftnote.png" id="2_8f6q6"]
+[ext_resource type="Texture2D" uid="uid://boqpdnepymnwq" path="res://assets/art/sprites/leftnote.png" id="2_8f6q6"]
 
 [node name="Note" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_epybe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-47, -23)
+position = Vector2(-89, -21)
 texture = ExtResource("2_8f6q6")
 centered = false
 region_rect = Rect2(344, 40, 600, 608)

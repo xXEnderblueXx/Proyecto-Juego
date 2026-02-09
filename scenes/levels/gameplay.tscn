@@ -1,15 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://xoaew27k50s8"]
+[gd_scene load_steps=3 format=3 uid="uid://xoaew27k50s8"]
 
 [ext_resource type="Script" uid="uid://bsrp1cih0fyp0" path="res://scenes/levels/gameplay.gd" id="1_hxqbr"]
+[ext_resource type="Texture2D" uid="uid://38sv545x2bbk" path="res://assets/art/backgrounds/fondo_para_baile.jpeg" id="2_w5kxr"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_hxqbr")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Yare" type="Button" parent="CanvasLayer2"]
+offset_left = 411.0
+offset_top = 467.0
+offset_right = 568.0
+offset_bottom = 515.0
+text = "YARE
+"
+
+[node name="Dificil" type="Button" parent="CanvasLayer2"]
+offset_left = 411.0
+offset_top = 417.0
+offset_right = 568.0
+offset_bottom = 465.0
+text = "Dificil"
+
+[node name="Facil" type="Button" parent="CanvasLayer2"]
+offset_left = 412.0
+offset_top = 317.0
+offset_right = 566.0
+offset_bottom = 365.0
+text = "Facil
+"
+
+[node name="Medio" type="Button" parent="CanvasLayer2"]
+offset_left = 412.0
+offset_top = 367.0
+offset_right = 567.0
+offset_bottom = 415.0
+text = "Medio
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RhythmManager" type="RhythmManager" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="World" type="Node2D" parent="."]
+scale = Vector2(85.1623, 102.49985)
+
+[node name="MarginContainer2" type="MarginContainer" parent="World"]
+offset_left = 1.197713
+offset_top = 1.3560995
+offset_right = 1.197713
+offset_bottom = 1.3560995
+scale = Vector2(-42.713333, 33.144386)
+size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="World/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_w5kxr")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="NotesContainer" type="Node2D" parent="."]
 

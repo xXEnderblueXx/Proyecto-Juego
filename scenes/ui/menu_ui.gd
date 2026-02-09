@@ -3,6 +3,7 @@ extends Control
 @onready var inicio = $MarginContainer/menuInicio
 @onready var opciones = $MarginContainer/menuOpciones
 @onready var resolution = $MarginContainer/resolutions
+@onready var menu = $"."
 
 func _ready() -> void:
 	opciones.process_mode = Node.PROCESS_MODE_DISABLED
@@ -56,11 +57,16 @@ func _on_audio_pressed() -> void:
 func _on_x_600_pressed() -> void:
 	CONFIGMANAGER.aplicar_resolucion(0) 
 
-
 func _on__pressed() -> void:
 	CONFIGMANAGER.aplicar_resolucion(1) 
-
 
 func _on_x_1080_pressed() -> void:
 	CONFIGMANAGER.aplicar_resolucion(2) 
 	
+
+func _on_volver_al_juego_pressed() -> void:
+	menu.process_mode = Node.PROCESS_MODE_DISABLED
+	menu.visible = false
+
+func _on_salir_al_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/menuUI.tscn")

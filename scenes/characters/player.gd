@@ -4,8 +4,12 @@ extends PlayerCharacter
 @onready var state_machine = anim_tree.get("parameters/playback")
 # Referencia a la cámara para ajustar los límites
 @onready var camera = $Camera2D 
+@onready var menu = $Camera2D/menu
 
 func _ready() -> void:
+	menu.process_mode = Node.PROCESS_MODE_DISABLED
+	menu.visible = false
+	
 	anim_tree.active = true
 	if $InteractionRayCast:
 		$InteractionRayCast.add_exception(self)
@@ -33,6 +37,10 @@ func setup_camera_limits() -> void:
 		push_warning("No se encontró el nodo 'Suelo' para calcular los límites de la cámara")
 
 func _process(_delta: float) -> void:
+	if Input.is_action_pressed("menu_en_partida"):
+		menu.process_mode = Node.PROCESS_MODE_INHERIT
+		menu.visible = true
+	
 	var current_velocity = velocity 
 
 	if current_velocity.length() == 0:

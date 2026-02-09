@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpfchfy8dfvnl"
-path="res://.godot/imported/anciano_juego.png-d04bc0db7351a0567ed2a3d5007a1de0.ctex"
+uid="uid://k6dm0i2ll0q8"
+path="res://.godot/imported/tileset_D.png-6bd88900d2af0b85be73cffa63cc9bde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/anciano_juego.png"
-dest_files=["res://.godot/imported/anciano_juego.png-d04bc0db7351a0567ed2a3d5007a1de0.ctex"]
+source_file="res://assets/art/backgrounds/mvmz/tileset_D.png"
+dest_files=["res://.godot/imported/tileset_D.png-6bd88900d2af0b85be73cffa63cc9bde.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chk12nsvinaer"
-path="res://.godot/imported/downnote.png-c1f0c5b1b0e17bed6c4731acf2441886.ctex"
+uid="uid://fp6ph5mhxn8b"
+path="res://.godot/imported/mascara_3_cachos.png-16c30dd0f75679ca6236c1699a900317.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/downnote.png"
-dest_files=["res://.godot/imported/downnote.png-c1f0c5b1b0e17bed6c4731acf2441886.ctex"]
+source_file="res://assets/art/backgrounds/mvmz/mascara_3_cachos.png"
+dest_files=["res://.godot/imported/mascara_3_cachos.png-16c30dd0f75679ca6236c1699a900317.ctex"]
 
 [params]
 

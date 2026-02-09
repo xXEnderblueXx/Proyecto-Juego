@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8avr3bhgei5"
-path="res://.godot/imported/leftnote.png-1cea3b4539c49040d56c6e3fafdeb086.ctex"
+uid="uid://tiwao67ogbnk"
+path="res://.godot/imported/tileset_C.png-ad6ab06e91d4dba38bfa1a55908055c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/leftnote.png"
-dest_files=["res://.godot/imported/leftnote.png-1cea3b4539c49040d56c6e3fafdeb086.ctex"]
+source_file="res://assets/art/backgrounds/mvmz/tileset_C.png"
+dest_files=["res://.godot/imported/tileset_C.png-ad6ab06e91d4dba38bfa1a55908055c0.ctex"]
 
 [params]
 

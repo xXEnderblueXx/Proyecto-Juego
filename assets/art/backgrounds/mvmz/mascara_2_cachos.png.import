@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b53087auw5s8a"
-path="res://.godot/imported/rightnote.png-9c1e789491e6fac80c9d88379742f228.ctex"
+uid="uid://bb444e021nax3"
+path="res://.godot/imported/mascara_2_cachos.png-78830572e15105be4e250d7c667d8586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/rightnote.png"
-dest_files=["res://.godot/imported/rightnote.png-9c1e789491e6fac80c9d88379742f228.ctex"]
+source_file="res://assets/art/backgrounds/mvmz/mascara_2_cachos.png"
+dest_files=["res://.godot/imported/mascara_2_cachos.png-78830572e15105be4e250d7c667d8586.ctex"]
 
 [params]
 

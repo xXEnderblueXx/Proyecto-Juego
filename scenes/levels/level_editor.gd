@@ -50,9 +50,11 @@ func _conectar_boton(boton, funcion):
 
 # --- BUCLE PRINCIPAL (LÓGICA ACTUALIZADA) ---
 func _process(_delta): 
+	if manager.recording_mode and audio.playing:
+		_handle_recording_inputs_visuals()
 	# 1. DETERMINAR EL TIEMPO ACTUAL
 	var audio_time = 0.0
-	
+
 	# Priorizamos el slider si estamos arrastrando O si el audio está en pausa/detenido
 	if is_dragging_slider or not audio.playing:
 		audio_time = time_slider.value

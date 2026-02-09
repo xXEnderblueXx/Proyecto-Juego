@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ywd41hpc3egy"
-path="res://.godot/imported/baile_de_diego_con_mascara_terminado.png-26592b65cafd03eec59c8c0fd38fb5d4.ctex"
+uid="uid://c3ad8r5cuhpb4"
+path="res://.godot/imported/tileset_B.png-0aa912e4b25e3390769ca5a83c46ac86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/baile_de_diego_con_mascara_terminado.png"
-dest_files=["res://.godot/imported/baile_de_diego_con_mascara_terminado.png-26592b65cafd03eec59c8c0fd38fb5d4.ctex"]
+source_file="res://assets/art/backgrounds/mvmz/tileset_B.png"
+dest_files=["res://.godot/imported/tileset_B.png-0aa912e4b25e3390769ca5a83c46ac86.ctex"]
 
 [params]
 

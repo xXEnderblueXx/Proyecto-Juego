@@ -1,13 +1,12 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://cwgbjh02by4ww"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://cwgbjh02by4ww"]
 
 [ext_resource type="Texture2D" uid="uid://bstfworb6v1sv" path="res://assets/art/backgrounds/Buildings/iglesia_juego.png" id="1_72sva"]
 [ext_resource type="Texture2D" uid="uid://cebcr6m6s7tro" path="res://assets/art/backgrounds/Outdoor decoration/bandera_yare.png" id="2_plgdp"]
-[ext_resource type="Texture2D" uid="uid://c158i3r3j75ko" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree_Small.png" id="3_kvj6v"]
-[ext_resource type="Texture2D" uid="uid://b7h7cl61gn1od" path="res://assets/art/backgrounds/Outdoor decoration/Fences.png" id="4_24cih"]
-[ext_resource type="Texture2D" uid="uid://cw6wr3rxenp6" path="res://assets/art/backgrounds/Outdoor decoration/Outdoor_Decor_Free.png" id="5_dmjr2"]
-[ext_resource type="Texture2D" uid="uid://cou7lf57ns0w4" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree.png" id="6_uea8e"]
+[ext_resource type="Texture2D" uid="uid://sdh382khjkqu" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree_Small.png" id="3_kvj6v"]
+[ext_resource type="Texture2D" uid="uid://b647mq148d5qk" path="res://assets/art/backgrounds/Outdoor decoration/Fences.png" id="4_24cih"]
+[ext_resource type="Texture2D" uid="uid://cikqqb8fc122m" path="res://assets/art/backgrounds/Outdoor decoration/Outdoor_Decor_Free.png" id="5_dmjr2"]
+[ext_resource type="Texture2D" uid="uid://c5komf3gbno0c" path="res://assets/art/backgrounds/Outdoor decoration/Oak_Tree.png" id="6_uea8e"]
 [ext_resource type="Texture2D" uid="uid://v6iwmynrdyr8" path="res://assets/art/backgrounds/Buildings/Props.png" id="7_266g4"]
-[ext_resource type="Texture2D" uid="uid://behg7b85egbfs" path="res://assets/art/backgrounds/Buildings/plantas.png" id="8_clftb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyevm"]
 texture = ExtResource("1_72sva")
@@ -2093,7 +2092,6 @@ texture = ExtResource("7_266g4")
 13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icwxr"]
-texture = ExtResource("8_clftb")
 2:0/0 = 0
 2:1/0 = 0
 3:1/0 = 0

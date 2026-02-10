@@ -12,6 +12,7 @@ extends PlayerCharacter
 
 
 func _ready() -> void:
+
 	menu.process_mode = Node.PROCESS_MODE_DISABLED
 	menu.visible = false
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xoaew27k50s8"]
+[gd_scene load_steps=9 format=3 uid="uid://xoaew27k50s8"]
 
 [ext_resource type="AudioStream" uid="uid://b66ys0ogll66u" path="res://assets/audio/music/Boss.wav" id="1_hxqbr"]
 [ext_resource type="Script" uid="uid://bk5hg610hdvc3" path="res://scenes/levels/gameplay_Controller.gd" id="1_w5kxr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://binxp7gbauhhy" path="res://assets/art/ui/healthbarUnder.png" id="3_8ldp5"]
 [ext_resource type="Texture2D" uid="uid://dkvtmc05416vb" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="3_gsltn"]
 [ext_resource type="Texture2D" uid="uid://e3q36tp34d66" path="res://assets/art/ui/healthbarProgress.png" id="4_cdulh"]
+[ext_resource type="PackedScene" uid="uid://cvlwgb8iq50r" path="res://scenes/characters/player_combate.tscn" id="7_47rg0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w5kxr"]
 font_size = 64
@@ -13,18 +14,6 @@ font_size = 64
 [node name="Gameplay" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_w5kxr")
-
-[node name="World" type="Node2D" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="World"]
-offset_right = 1325.0
-offset_bottom = 650.0
-texture = ExtResource("2_w5kxr")
-
-[node name="RhythmManager" type="RhythmManager" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_hxqbr")
 
 [node name="UI_Layer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -285,3 +274,24 @@ text = "Reintentar"
 process_mode = 3
 layout_mode = 2
 text = "Menu"
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="World"]
+offset_right = 1325.0
+offset_bottom = 650.0
+texture = ExtResource("2_w5kxr")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+position = Vector2(643, 333)
+scale = Vector2(3.6398685, 0.14946587)
+zoom = Vector2(0.9, 0.9)
+
+[node name="RhythmManager" type="RhythmManager" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_hxqbr")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("7_47rg0")]
+position = Vector2(274.99997, 522.99994)
+scale = Vector2(0.5, 0.5)

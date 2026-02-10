@@ -69,7 +69,7 @@ func _process(delta):
 		# USAMOS EL CENTRO PARA EL DESTINO EN X
 		var target_center_x = get_hitzone_center().x
 		
-		hp -= 2.0 * delta 
+		hp -= 0.5 * delta 
 		$UI_Layer/HUD/HealthBar.value = hp
 		health_bar.value = hp
 		if hp <= 0: _on_song_finished() 
@@ -232,3 +232,7 @@ func change_state(new_state):
 		GameState.RESULTS:
 			get_tree().paused = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_btn_menu_pressed() -> void:
+	pass # Replace with function body.

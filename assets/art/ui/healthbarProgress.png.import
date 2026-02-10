@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r35gxrf1aw3t"
-path="res://.godot/imported/baile_de_enemigo_terminado.png-4e57af9a8c91536d9e7f96b3388b9694.ctex"
+uid="uid://e3q36tp34d66"
+path="res://.godot/imported/healthbarProgress.png-5377e577f43a41d76b84c0576be2e4ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/baile_de_enemigo_terminado.png"
-dest_files=["res://.godot/imported/baile_de_enemigo_terminado.png-4e57af9a8c91536d9e7f96b3388b9694.ctex"]
+source_file="res://assets/art/ui/healthbarProgress.png"
+dest_files=["res://.godot/imported/healthbarProgress.png-5377e577f43a41d76b84c0576be2e4ba.ctex"]
 
 [params]
 

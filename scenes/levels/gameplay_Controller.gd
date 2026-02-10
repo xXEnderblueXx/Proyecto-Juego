@@ -19,6 +19,7 @@ var hp: float = 100.0
 var note_scene = preload("res://scenes/levels/note.tscn") 
 
 # UI
+@onready var health_bar = $UI_Layer/HUD/HealthBar
 @onready var difficulty_screen = $UI_Layer/DifficultySelect
 @onready var loading_screen = $UI_Layer/LoadingScreen
 @onready var hud = $UI_Layer/HUD
@@ -68,9 +69,9 @@ func _process(delta):
 		# USAMOS EL CENTRO PARA EL DESTINO EN X
 		var target_center_x = get_hitzone_center().x
 		
-		hp -= 2.0 * delta 
+		hp -= 0.5 * delta 
 		$UI_Layer/HUD/HealthBar.value = hp
-		
+		health_bar.value = hp
 		if hp <= 0: _on_song_finished() 
 		
 		for note in notes_container.get_children():
@@ -140,8 +141,9 @@ func _aplicar_resultado(rating: String, multiplier: float, note: Node):
 	else:
 		current_score += score_per_note * multiplier
 		current_combo += 1
-		hp = min(hp + 2.0, 100.0)
 		stats[rating] += 1
+		var recovery = 2.0 * multiplier
+		hp = min(hp + recovery, 100.0)
 		
 		# Si es tecla E (tipo 4), podrías disparar algo especial aquí
 		if note.type == 4: pass 
@@ -230,3 +232,7 @@ func change_state(new_state):
 		GameState.RESULTS:
 			get_tree().paused = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_btn_menu_pressed() -> void:
+	pass # Replace with function body.

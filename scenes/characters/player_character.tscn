@@ -236,8 +236,10 @@ region_rect = Rect2(-2.0168762, -35.726624, 5119.0195, 6172.1914)
 zoom = Vector2(2.3, 2.3)
 position_smoothing_enabled = true
 
-[node name="menu" parent="Camera2D" instance=ExtResource("3_mjudt")]
-scale = Vector2(5, 5)
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("3_mjudt")]
+process_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

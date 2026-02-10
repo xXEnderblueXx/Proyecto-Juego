@@ -240,6 +240,7 @@ position_smoothing_enabled = true
 
 [node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("3_mjudt")]
 process_mode = 3
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

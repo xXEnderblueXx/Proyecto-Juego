@@ -31,8 +31,6 @@ func _on_volver_pressed() -> void:
 	opciones.visible = false
 	resolution.process_mode = Node.PROCESS_MODE_DISABLED
 	resolution.visible = false
-	
-	#zzzzzzz
 
 func _on_full_scream_changed_pressed() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:

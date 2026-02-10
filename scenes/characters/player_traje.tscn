@@ -507,12 +507,12 @@ zoom = Vector2(2.3, 2.3)
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("5_aphep")]
 process_mode = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+visible = false
 top_level = true
 position = Vector2(695, 927.99994)
 scale = Vector2(3.4129403, 6.717213)

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bq8nproqduluy"
+path="res://.godot/imported/dialogo Jhoscy.dialogue-fdb69f3db9d301a573731742142230af.tres"
+
+[deps]
+
+source_file="res://Dialogues/dialogo Jhoscy.dialogue"
+dest_files=["res://.godot/imported/dialogo Jhoscy.dialogue-fdb69f3db9d301a573731742142230af.tres"]
+
+[params]
+
+defaults=true

@@ -510,6 +510,7 @@ enabled = false
 
 [node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("5_8yn3v")]
 process_mode = 3
+visible = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer"]
 visible = false

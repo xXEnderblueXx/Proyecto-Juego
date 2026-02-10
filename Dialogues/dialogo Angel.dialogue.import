@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bswlwowajr4xb"
+path="res://.godot/imported/dialogo Angel.dialogue-e261c71c54644f6da76e983fc0085f06.tres"
+
+[deps]
+
+source_file="res://Dialogues/dialogo Angel.dialogue"
+dest_files=["res://.godot/imported/dialogo Angel.dialogue-e261c71c54644f6da76e983fc0085f06.tres"]
+
+[params]
+
+defaults=true

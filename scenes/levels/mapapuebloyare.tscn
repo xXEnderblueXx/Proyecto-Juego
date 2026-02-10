@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cu83aoc0rttgp"]
+[gd_scene load_steps=21 format=4 uid="uid://cu83aoc0rttgp"]
 
 [ext_resource type="TileSet" uid="uid://clwx3suc5odgo" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_bblsx"]
 [ext_resource type="TileSet" uid="uid://dqfyav48octf8" path="res://assets/art/backgrounds/adornospuebloyare.tres" id="2_pwdp5"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="8_8p54v"]
 [ext_resource type="PackedScene" uid="uid://nw36i6aw32y5" path="res://scenes/characters/player_character.tscn" id="8_xyuxq"]
 [ext_resource type="PackedScene" uid="uid://bjd33ooycb3tu" path="res://scenes/objects/portal_salida.tscn" id="9_xyuxq"]
+[ext_resource type="Texture2D" uid="uid://b65g1ext47khv" path="res://assets/art/backgrounds/Outdoor decoration/altar_vacio_1.png" id="10_yy20k"]
+[ext_resource type="Texture2D" uid="uid://cbldatqvrv514" path="res://assets/art/ui/papel_mache.png" id="11_3g1ou"]
+[ext_resource type="Texture2D" uid="uid://bjurl4qmmovvy" path="res://assets/art/ui/potes_de_pintura.png" id="12_lous1"]
 
 [sub_resource type="Animation" id="Animation_eqd1q"]
 length = 0.001
@@ -47,6 +50,60 @@ _data = {
 &"fade_out": SubResource("Animation_eikmy")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8tllg"]
+
+[sub_resource type="Animation" id="Animation_3g1ou"]
+resource_name = "sin_belon"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_lous1"]
+resource_name = "con_belon"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_qhh0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c40b"]
+_data = {
+&"RESET": SubResource("Animation_qhh0h"),
+&"con_belon": SubResource("Animation_lous1"),
+&"sin_belon": SubResource("Animation_3g1ou")
+}
+
 [node name="Mapa" type="Node2D"]
 
 [node name="Suelo" type="TileMapLayer" parent="."]
@@ -78,7 +135,7 @@ position = Vector2(-380.66666, 143.33333)
 velocidad = 60.0
 
 [node name="CharacterBody2D4" parent="NPC/pollos" instance=ExtResource("3_l1dqm")]
-position = Vector2(203.33333, -44)
+position = Vector2(162.66666, 71.333336)
 velocidad = 60.0
 
 [node name="CharacterBody2D5" parent="NPC/pollos" instance=ExtResource("3_l1dqm")]
@@ -94,7 +151,7 @@ position = Vector2(550, 549.3334)
 velocidad = 60.0
 
 [node name="CharacterBody2D8" parent="NPC/pollos" instance=ExtResource("3_l1dqm")]
-position = Vector2(162, -31)
+position = Vector2(134.66667, 4.666668)
 velocidad = 60.0
 
 [node name="CharacterBody2D9" parent="NPC/pollos" instance=ExtResource("3_l1dqm")]
@@ -199,4 +256,31 @@ position = Vector2(407, 674)
 scale = Vector2(1.514669, 3.1117911)
 escena_destino = "uid://bdn7md3kdllm1"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Altar" type="Sprite2D" parent="."]
+position = Vector2(969, 196)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_yy20k")
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="Altar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar/Area2D"]
+scale = Vector2(48.852432, 24.93062)
+shape = SubResource("CapsuleShape2D_8tllg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Altar"]
+libraries = {
+&"": SubResource("AnimationLibrary_3c40b")
+}
+
+[node name="Papel_Mache" type="Sprite2D" parent="."]
+texture = ExtResource("11_3g1ou")
+
+[node name="Pintura" type="Sprite2D" parent="."]
+texture = ExtResource("12_lous1")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]

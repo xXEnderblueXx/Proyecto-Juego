@@ -82,7 +82,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
 modulate = Color(1, 1, 1, 0.39215687)
@@ -195,6 +194,7 @@ theme_override_font_sizes/font_size = 20
 text = "FullScream"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 top_level = true
 position = Vector2(590.5, 334.00003)
 scale = Vector2(2.3209221, 2.6056786)

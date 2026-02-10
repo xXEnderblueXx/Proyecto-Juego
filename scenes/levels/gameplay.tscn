@@ -199,7 +199,7 @@ offset_left = -1.0
 offset_top = 37.0
 offset_right = 1329.0
 offset_bottom = 111.0
-color = Color(0, 0, 0, 0.36078432)
+color = Color(0, 0, 0, 0.15294118)
 
 [node name="ResultsScreen" type="Control" parent="UI_Layer"]
 layout_mode = 3

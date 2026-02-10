@@ -164,21 +164,20 @@ func _on_btn_cargar_pressed():
 
 	manager.load_level(path)
 	
-	# Limpieza
-	for n in loaded_notes_visuals: if is_instance_valid(n): n.queue_free()
+	# Limpieza de visuales previos
+	for n in loaded_notes_visuals: 
+		if is_instance_valid(n): n.queue_free()
 	loaded_notes_visuals.clear()
 
+	# ACTUALIZACIÓN DEL SLIDER AL CARGAR
 	if audio.stream:
-		var duration = audio.stream.get_length()
-		time_slider.max_value = duration
+		time_slider.max_value = audio.stream.get_length()
 		time_slider.step = 0.01
 
-	# Recrear visuales
+	# Recrear visuales de las notas cargadas
 	var all_data = manager.get_all_notes()
 	var idx = 0
-	
-	var spawn_y = 300.0
-	if spawn_node: spawn_y = spawn_node.position.y
+	var spawn_y = spawn_node.position.y if spawn_node else 300.0
 	
 	for data in all_data:
 		var n = note_scene.instantiate()
@@ -194,12 +193,17 @@ func _on_btn_cargar_pressed():
 	status_label.text = "Cargadas " + str(idx) + " notas."
 	_pausar_juego()
 
-# --- GRABAR / GUARDAR ---
 func _on_btn_grabar_pressed():
-	if input_nombre.text == "": return
+	if input_nombre.text == "" or not audio.stream: return
+	
+	# ACTUALIZACIÓN VITAL: Sincronizar el slider con la duración real al grabar
+	time_slider.max_value = audio.stream.get_length()
+	
 	status_label.text = "🔴 GRABANDO..."
-	for n in loaded_notes_visuals: n.queue_free()
+	for n in loaded_notes_visuals: 
+		if is_instance_valid(n): n.queue_free()
 	loaded_notes_visuals.clear()
+	
 	manager.recording_mode = true
 	manager.start_song()
 	get_viewport().set_input_as_handled()

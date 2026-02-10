@@ -185,7 +185,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_od6ev")
 text = "1920x1080"
 
 [node name="FullScream" type="VBoxContainer" parent="MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -196,7 +195,6 @@ theme_override_font_sizes/font_size = 20
 text = "FullScream"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 top_level = true
 position = Vector2(590.5, 334.00003)
 scale = Vector2(2.3209221, 2.6056786)

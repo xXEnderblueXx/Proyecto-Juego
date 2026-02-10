@@ -4,7 +4,7 @@ extends PlayerCharacter
 @onready var state_machine = anim_tree.get("parameters/playback")
 # Referencia a la cámara para ajustar los límites
 @onready var camera = $Camera2D 
-@onready var menu = $Camera2D/menu
+@onready var menu: Control = $Camera2D/CanvasLayer/menu
 
 func _ready() -> void:
 	menu.process_mode = Node.PROCESS_MODE_DISABLED
@@ -37,9 +37,8 @@ func setup_camera_limits() -> void:
 		push_warning("No se encontró el nodo 'Suelo' para calcular los límites de la cámara")
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("menu_en_partida"):
-		menu.process_mode = Node.PROCESS_MODE_INHERIT
-		menu.visible = true
+	if Input.is_action_just_pressed("menu_en_partida"):
+		toggle_menu()
 	
 	var current_velocity = velocity 
 
@@ -60,3 +59,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 			print("Accion de interact detecta en gdscript")
 			interact()
+
+func toggle_menu() -> void:
+	# Aplicamos la lógica de inversión booleana para el menú
+	menu.visible = !menu.visible
+	menu.process_mode = Node.PROCESS_MODE_INHERIT if menu.visible else Node.PROCESS_MODE_DISABLED
+	

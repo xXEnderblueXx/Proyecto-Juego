@@ -1,7 +1,7 @@
 extends Area2D
 
 @export_file("*.tscn") var escena_destino: String
-@export var marker_al_llegar: String = "" # Aquí escribiremos el nombre del Marker2D
+@export var marker_al_llegar: String = "Spawn_Entrada_Casa" # Aquí escribiremos el nombre del Marker2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugador"):

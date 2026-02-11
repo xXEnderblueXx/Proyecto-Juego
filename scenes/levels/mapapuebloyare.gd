@@ -1,20 +1,18 @@
 extends Node2D
 
+
 func _ready():
-	# 1. VERIFICAR SI VENIMOS DE UN PORTAL
 	if Global.target_spawn_id != "":
-		# Buscamos el Area2D (ej: "DesdeCasaArtesano")
-		var area_spawn = get_node_or_null(Global.target_spawn_id)
+		print("Intentando aparecer en: ", Global.target_spawn_id) # Esto saldrá en la consola
 		
-		if area_spawn:
-			# --- SOLUCIÓN AL BUCLE ---
-			# En lugar de aparecer en el centro (0,0) del área, 
-			# aparecemos 20 píxeles más abajo para no tocar la colisión.
-			var posicion_segura = area_spawn.global_position + Vector2(0, 20)
-			
-			$PlayerCharacter.global_position = posicion_segura
-			
-			# Limpiamos el ID para el próximo viaje
-			Global.target_spawn_id = ""
+		var punto_donde_llegar = get_node_or_null(Global.target_spawn_id)
+		if punto_donde_llegar != null:
+			# Movemos al jugador y forzamos a la cámara a seguirl
+			$PlayerCharacter.global_position = punto_donde_llegar.global_position
+			print("¡Éxito! Personaje movido a ", punto_donde_llegar.name)
 		else:
-			print("Error: No encontré el área de spawn: ", Global.target_spawn_id)
+			# Si esto sale en rojo abajo, es que el nombre está mal escrito
+			push_error("ERROR: No encontré el nodo llamado " + Global.target_spawn_id)
+		
+		# IMPORTANTE: Limpiar el ID siempre al f
+		Global.target_spawn_id = ""

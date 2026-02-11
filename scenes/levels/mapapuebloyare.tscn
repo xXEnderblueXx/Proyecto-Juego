@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cu83aoc0rttgp"]
+[gd_scene load_steps=23 format=4 uid="uid://cu83aoc0rttgp"]
 
 [ext_resource type="TileSet" uid="uid://clwx3suc5odgo" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_bblsx"]
 [ext_resource type="Script" uid="uid://dyycwwtrwakyf" path="res://scenes/levels/mapapuebloyare.gd" id="1_lous1"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bjd33ooycb3tu" path="res://scenes/objects/portal_salida.tscn" id="9_xyuxq"]
 [ext_resource type="Texture2D" uid="uid://b65g1ext47khv" path="res://assets/art/backgrounds/Outdoor decoration/altar_vacio_1.png" id="10_yy20k"]
 [ext_resource type="Texture2D" uid="uid://cbldatqvrv514" path="res://assets/art/ui/papel_mache.png" id="11_3g1ou"]
+[ext_resource type="Script" uid="uid://00nanbkyd8to" path="res://scenes/objects/CaminoALaIglesia.gd" id="11_qhh0h"]
 [ext_resource type="Texture2D" uid="uid://bjurl4qmmovvy" path="res://assets/art/ui/potes_de_pintura.png" id="12_lous1"]
 
 [sub_resource type="Animation" id="Animation_eqd1q"]
@@ -249,7 +250,7 @@ position = Vector2(683, 208.99998)
 scale = Vector2(0.1, 0.1)
 
 [node name="Spawn_Desde_Artesano" type="Marker2D" parent="."]
-position = Vector2(408, 714)
+position = Vector2(407, 720)
 
 [node name="Spawn_Desde_Iglesia" type="Marker2D" parent="."]
 position = Vector2(680, 31)
@@ -258,7 +259,9 @@ scale = Vector2(9, 1)
 [node name="CaminoALaIglesia" parent="." instance=ExtResource("9_xyuxq")]
 position = Vector2(679.99994, 11)
 scale = Vector2(7.09511, 0.9470777)
+script = ExtResource("11_qhh0h")
 escena_destino = "uid://ct5etq3x3bgr6"
+marker_al_llegar = "Spawn_Entrada_Iglesia"
 
 [node name="DesdeCasaArtesano" parent="." instance=ExtResource("9_xyuxq")]
 position = Vector2(407, 674)

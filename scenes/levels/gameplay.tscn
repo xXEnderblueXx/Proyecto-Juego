@@ -312,7 +312,6 @@ offset_left = 8.0
 offset_top = 288.0
 offset_right = 101.0
 offset_bottom = 336.0
-text = "Menu"
 
 [node name="ColorRect" type="ColorRect" parent="UI_Layer/HUD"]
 layout_mode = 0

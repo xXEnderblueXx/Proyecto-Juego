@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://d1cnkitrajjqf" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_mapa.png" id="1_o1cfg"]
 [ext_resource type="Texture2D" uid="uid://c4hc4dijtcd0e" path="res://assets/art/backgrounds/Buildings/Atlas/baldosa_caminos.png" id="2_fm6jp"]
-[ext_resource type="Texture2D" uid="uid://c3x6nsgqcaw1g" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="3_yj23j"]
-[ext_resource type="Texture2D" uid="uid://c7dt3gkqvcqyt" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="4_0jale"]
-[ext_resource type="Texture2D" uid="uid://hreb0lns3peb" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="5_vbmaq"]
-[ext_resource type="Texture2D" uid="uid://cprr1ah1ipxl3" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_pa510"]
+[ext_resource type="Texture2D" uid="uid://jk5r0vtjor53" path="res://assets/art/backgrounds/Tiles/Grass_Middle.png" id="3_yj23j"]
+[ext_resource type="Texture2D" uid="uid://cdkg40jtje16h" path="res://assets/art/backgrounds/Tiles/Path_Middle.png" id="4_0jale"]
+[ext_resource type="Texture2D" uid="uid://c8wmhsf2hvtw5" path="res://assets/art/backgrounds/Tiles/Cliff_Tile.png" id="5_vbmaq"]
+[ext_resource type="Texture2D" uid="uid://dlssleb2bxpbu" path="res://assets/art/backgrounds/Tiles/Path_Tile.png" id="6_pa510"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mxpa"]
 texture = ExtResource("1_o1cfg")

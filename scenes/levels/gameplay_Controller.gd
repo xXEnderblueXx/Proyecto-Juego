@@ -26,6 +26,7 @@ var note_scene = preload("res://scenes/levels/note.tscn")
 @onready var results_screen = $UI_Layer/ResultsScreen
 @onready var pause_menu = $UI_Layer/HUD/PauseMenu
 @onready var btn_resume = $UI_Layer/HUD/PauseMenu/BtnResume
+@onready var capataz = $PrimerCapataz
 
 enum GameState { SELECTION, LOADING, PLAYING, PAUSED, RESULTS } 
 var current_state = GameState.SELECTION
@@ -164,7 +165,7 @@ func _on_note_spawned(type, speed, hit_time, _id):
 	n.setup(type, speed, hit_time)
 	n.hit_time = hit_time
 	n.position.y = hit_zone.position.y
-	
+	capataz.bailar_direccion(tipo_nota)
 func _get_input_type(event):
 	if event.is_action_pressed("ui_left"): return 0
 	if event.is_action_pressed("ui_down"): return 1

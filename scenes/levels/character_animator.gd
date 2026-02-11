@@ -1,49 +1,44 @@
 extends Sprite2D
 
-# Referencia interna al AnimationPlayer
 @onready var anim_player = $AnimationPlayer
-
-# Probabilidad de que salga la animación especial (0.0 a 1.0)
-# 0.2 significa 20% de probabilidad de "jojos", 80% de "idle"
 @export var jojos_chance: float = 0.2
-
 var is_game_paused: bool = false
+var is_dancing: bool = false # Nueva variable para dar prioridad al ritmo
 
 func _ready() -> void:
-	# Conectamos la señal para saber cuándo termina una animación
-	# Esto garantiza la "consistencia": nunca cortaremos una animación a la mitad
 	anim_player.animation_finished.connect(_on_animation_finished)
-	
-	# Iniciamos con idle por defecto
 	play_gameplay_loop()
 
-func _on_animation_finished(anim_name: String) -> void:
-	# Si estamos pausados, no hacemos nada (se queda en loop de pause o quieto)
-	if is_game_paused:
-		return
+# --- NUEVA FUNCIÓN: BAILAR AL RITMO ---
+func bailar_direccion(direccion: String) -> void:
+	# Si el juego está pausado, ignoramos las notas
+	if is_game_paused: return
+	
+	# Detenemos el loop de idle para priorizar el paso de baile
+	is_dancing = true
+	
+	# direccion vendrá como "arriba", "abajo", etc.
+	var nombre_anim = "baile_" + direccion
+	if anim_player.has_animation(nombre_anim):
+		anim_player.play(nombre_anim)
 
-	# Si terminó "idle" o "jojos", decidimos cuál sigue
-	if anim_name == "idle" or anim_name == "jojos":
+func _on_animation_finished(anim_name: String) -> void:
+	if is_game_paused: return
+
+	# Si terminó una animación de baile, volvemos al estado base
+	if anim_name.begins_with("baile_"):
+		is_dancing = false
 		decidir_siguiente_animacion()
+	
+	# Solo si no estamos bailando notas, seguimos con el ciclo idle/jojos
+	elif not is_dancing:
+		if anim_name == "idle" or anim_name == "jojos":
+			decidir_siguiente_animacion()
 
 func decidir_siguiente_animacion() -> void:
-	# Generamos un número aleatorio entre 0.0 y 1.0
+	if is_dancing: return # No interrumpir el baile rítmico
+	
 	if randf() < jojos_chance:
 		anim_player.play("jojos")
 	else:
 		anim_player.play("idle")
-
-# --- FUNCIONES PÚBLICAS (Para llamar desde Gameplay.gd) ---
-
-func set_paused_mode(activo: bool) -> void:
-	is_game_paused = activo
-	
-	if is_game_paused:
-		anim_player.play("pause")
-	else:
-		# Al reanudar, forzamos el inicio del ciclo de nuevo
-		decidir_siguiente_animacion()
-
-func play_gameplay_loop() -> void:
-	is_game_paused = false
-	anim_player.play("idle")

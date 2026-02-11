@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dmnatijpv4ug4"
+path="res://.godot/imported/dialogo artesano.dialogue-3e739229697f57ff9697b58ea0f3bfc2.tres"
+
+[deps]
+
+source_file="res://Dialogues/dialogo artesano.dialogue"
+dest_files=["res://.godot/imported/dialogo artesano.dialogue-3e739229697f57ff9697b58ea0f3bfc2.tres"]
+
+[params]
+
+defaults=true

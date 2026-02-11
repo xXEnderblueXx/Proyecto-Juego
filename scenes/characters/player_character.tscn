@@ -1,12 +1,18 @@
-[gd_scene load_steps=59 format=3 uid="uid://nw36i6aw32y5"]
+[gd_scene load_steps=65 format=3 uid="uid://nw36i6aw32y5"]
 
 [ext_resource type="Script" uid="uid://dlfqrgtj7lxk0" path="res://scenes/characters/player.gd" id="1_3hfu2"]
 [ext_resource type="Texture2D" uid="uid://uva5ntc5tfnl" path="res://assets/art/sprites/dieguito_sprite_civil.png" id="2_mjudt"]
 [ext_resource type="Texture2D" uid="uid://bbbve2bdbb2fl" path="res://assets/art/sprites/dieguito_con_traje_rojo.png" id="3_hfyxy"]
 [ext_resource type="PackedScene" uid="uid://j6sdh5jcvq5c" path="res://scenes/ui/menuUI_Playing.tscn" id="3_mjudt"]
 [ext_resource type="Texture2D" uid="uid://ywd41hpc3egy" path="res://assets/art/sprites/baile_de_diego_con_mascara_terminado.png" id="4_hto64"]
+[ext_resource type="Texture2D" uid="uid://bjurl4qmmovvy" path="res://assets/art/ui/potes_de_pintura.png" id="6_72f5n"]
 [ext_resource type="Texture2D" uid="uid://cx1wv1gkf4oq4" path="res://assets/transition.png" id="6_hto64"]
 [ext_resource type="Texture2D" uid="uid://oarcjfp10qdi" path="res://assets/art/ui/barra_de_inventario.png" id="7_1dev2"]
+[ext_resource type="Texture2D" uid="uid://cbldatqvrv514" path="res://assets/art/ui/papel_mache.png" id="7_sn65t"]
+[ext_resource type="Texture2D" uid="uid://b2554gx3xlvuh" path="res://assets/art/ui/velon_juego.png" id="8_bp2ed"]
+[ext_resource type="Texture2D" uid="uid://sgaf7i0is66d" path="res://assets/art/ui/mascara_de_diego.png" id="9_2uget"]
+[ext_resource type="Texture2D" uid="uid://bc2erxvw1en3d" path="res://assets/art/ui/maracas_juego - copia.png" id="9_sn65t"]
+[ext_resource type="Texture2D" uid="uid://pyw5jc6uekna" path="res://assets/art/ui/arepa_juego.png" id="11_bp2ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hfu2"]
 size = Vector2(126.857086, 92.85715)
@@ -562,23 +568,6 @@ position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("3_mjudt")]
-process_mode = 3
-visible = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer"]
-visible = false
-top_level = true
-position = Vector2(695, 927.99994)
-scale = Vector2(3.4129403, 6.717213)
-texture = ExtResource("6_hto64")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/Sprite2D2"]
-libraries = {
-&"": SubResource("AnimationLibrary_l4wmq")
-}
-autoplay = "fade_out"
-
 [node name="interface" type="Control" parent="Camera2D/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -601,9 +590,55 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Button" type="TextureRect" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+[node name="BarraItems" type="TextureRect" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_1dev2")
+
+[node name="pintura" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(23.999998, 39.999996)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("6_72f5n")
+
+[node name="papelMache" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(57, 41)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("7_sn65t")
+
+[node name="belon" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(89.99999, 41.999996)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("8_bp2ed")
+
+[node name="maracas" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(122.99999, 40.999996)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("9_sn65t")
+
+[node name="mascara" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(157, 42)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("9_2uget")
+
+[node name="arepa" type="Sprite2D" parent="Camera2D/CanvasLayer/interface/MarginContainer/HBoxContainer"]
+position = Vector2(187, 41)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("11_bp2ed")
+
+[node name="menu" parent="Camera2D/CanvasLayer" instance=ExtResource("3_mjudt")]
+process_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+visible = false
+top_level = true
+position = Vector2(695, 927.99994)
+scale = Vector2(3.4129403, 6.717213)
+texture = ExtResource("6_hto64")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_l4wmq")
+}
+autoplay = "fade_out"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

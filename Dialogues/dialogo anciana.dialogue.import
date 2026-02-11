@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cwm0kukmutvwb"
+path="res://.godot/imported/dialogo anciana.dialogue-87ddda3e3c3603a61046209b72701ede.tres"
+
+[deps]
+
+source_file="res://Dialogues/dialogo anciana.dialogue"
+dest_files=["res://.godot/imported/dialogo anciana.dialogue-87ddda3e3c3603a61046209b72701ede.tres"]
+
+[params]
+
+defaults=true

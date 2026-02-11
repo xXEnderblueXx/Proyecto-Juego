@@ -58,9 +58,10 @@ func _on_retry_pressed():
 	# Recarga la escena actual de Gameplay desde cero
 	get_tree().reload_current_scene()
 func _on_menu_pressed():
-	get_tree().paused = false
-	# Cambia a tu escena de menú principal (ajusta la ruta según tu proyecto)
-	get_tree().change_scene_to_file("res://scenes/menu_ui.tscn")
+	#get_tree().paused = false
+	## Cambia a tu escena de menú principal (ajusta la ruta según tu proyecto)
+	#get_tree().change_scene_to_file("res://scenes/menu_ui.tscn")
+	pass
 
 func _process(delta):
 	if current_state == GameState.PLAYING:
@@ -234,5 +235,9 @@ func change_state(new_state):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
+
+
 func _on_btn_menu_pressed() -> void:
-	pass # Replace with function body.
+	#get_tree().paused = false
+	# Cambia a tu escena de menú principal (ajusta la ruta según tu proyecto)
+	get_tree().change_scene_to_file("res://scenes/menu_ui.tscn")

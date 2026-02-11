@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b1ehavs2r56dx"
+path="res://.godot/imported/dialogo diablo.dialogue-3cc23031a467ba0f18191fe7fc2cf818.tres"
+
+[deps]
+
+source_file="res://Dialogues/dialogo diablo.dialogue"
+dest_files=["res://.godot/imported/dialogo diablo.dialogue-3cc23031a467ba0f18191fe7fc2cf818.tres"]
+
+[params]
+
+defaults=true

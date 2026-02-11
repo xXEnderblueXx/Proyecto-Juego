@@ -17,12 +17,17 @@ config/features=PackedStringArray("4.5")
 [autoload]
 
 CONFIGMANAGER="*res://scripts/ConfigManager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [gui]
 
@@ -100,3 +105,7 @@ menu_en_partida={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/dialogo jesus.dialogue", "res://Dialogues/dialogo Jhoscy.dialogue", "res://Dialogues/dialogo Angel.dialogue", "res://Dialogues/dialogo artesano.dialogue", "res://Dialogues/dialogo anciana.dialogue", "res://Dialogues/dialogo diablo.dialogue", "res://Dialogues/dialogo final.dialogue")

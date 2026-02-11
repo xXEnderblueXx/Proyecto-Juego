@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xoaew27k50s8"]
+[gd_scene load_steps=20 format=3 uid="uid://xoaew27k50s8"]
 
 [ext_resource type="AudioStream" uid="uid://b66ys0ogll66u" path="res://assets/audio/music/Boss.wav" id="1_hxqbr"]
 [ext_resource type="Script" uid="uid://bk5hg610hdvc3" path="res://scenes/levels/gameplay_Controller.gd" id="1_w5kxr"]
@@ -7,9 +7,142 @@
 [ext_resource type="Texture2D" uid="uid://dkvtmc05416vb" path="res://assets/art/backgrounds/Tiles/Water_Middle.png" id="3_gsltn"]
 [ext_resource type="Texture2D" uid="uid://e3q36tp34d66" path="res://assets/art/ui/healthbarProgress.png" id="4_cdulh"]
 [ext_resource type="PackedScene" uid="uid://cvlwgb8iq50r" path="res://scenes/characters/player_combate.tscn" id="7_47rg0"]
+[ext_resource type="Texture2D" uid="uid://dt526p6mbew06" path="res://assets/art/sprites/baile_enemigo_terminado.png" id="8_ekw5s"]
+[ext_resource type="Script" uid="uid://do38hea480ce6" path="res://scenes/levels/character_animator.gd" id="9_68k6r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w5kxr"]
 font_size = 64
+
+[sub_resource type="Animation" id="Animation_68k6r"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.6, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 8, 10]
+}
+
+[sub_resource type="Animation" id="Animation_wynuh"]
+resource_name = "jump"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333333, 0.3, 0.43333334, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 14, 16, 17, 18, 19, 16]
+}
+
+[sub_resource type="Animation" id="Animation_ul6k7"]
+resource_name = "crouch"
+
+[sub_resource type="Animation" id="Animation_ljfdn"]
+resource_name = "left"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.23333333, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 33]
+}
+
+[sub_resource type="Animation" id="Animation_iyfxy"]
+resource_name = "right"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.23333333, 0.33333334, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+
+[sub_resource type="Animation" id="Animation_psmvt"]
+resource_name = "jojos"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [44, 45, 46]
+}
+
+[sub_resource type="Animation" id="Animation_ltvgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [43]
+}
+
+[sub_resource type="Animation" id="Animation_ekw5s"]
+resource_name = "pause"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kurh"]
+_data = {
+&"RESET": SubResource("Animation_ltvgd"),
+&"crouch": SubResource("Animation_ul6k7"),
+&"idle": SubResource("Animation_68k6r"),
+&"jojos": SubResource("Animation_psmvt"),
+&"jump": SubResource("Animation_wynuh"),
+&"left": SubResource("Animation_ljfdn"),
+&"pause": SubResource("Animation_ekw5s"),
+&"right": SubResource("Animation_iyfxy")
+}
 
 [node name="Gameplay" type="Node2D"]
 process_mode = 3
@@ -199,7 +332,6 @@ offset_right = 56.0
 offset_bottom = 190.0
 
 [node name="Fondo" type="ColorRect" parent="UI_Layer/ResultsScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.39800003
@@ -296,3 +428,19 @@ stream = ExtResource("1_hxqbr")
 move_speed = 0.0
 position = Vector2(274.99997, 522.99994)
 scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(903.00006, 392)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_ekw5s")
+hframes = 7
+vframes = 7
+frame = 43
+script = ExtResource("9_68k6r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_8kurh")
+}
+
+[connection signal="pressed" from="UI_Layer/ResultsScreen/ButtonsContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]

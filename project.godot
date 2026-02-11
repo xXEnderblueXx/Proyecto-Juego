@@ -20,6 +20,10 @@ CONFIGMANAGER="*res://scripts/ConfigManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://scenes/levels/Global.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://Dialogues/balloon.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -108,4 +112,4 @@ menu_en_partida={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/dialogo jesus.dialogue", "res://Dialogues/dialogo Jhoscy.dialogue", "res://Dialogues/dialogo Angel.dialogue", "res://Dialogues/dialogo artesano.dialogue", "res://Dialogues/dialogo anciana.dialogue", "res://Dialogues/dialogo diablo.dialogue", "res://Dialogues/dialogo final.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/dialogo jesus.dialogue", "res://Dialogues/dialogo Jhoscy.dialogue", "res://Dialogues/dialogo Angel.dialogue", "res://Dialogues/dialogo artesano.dialogue", "res://Dialogues/dialogo anciana.dialogue", "res://Dialogues/dialogo diablo.dialogue", "res://Dialogues/dialogo final.dialogue", "res://Dialogues/misiones.dialogue")

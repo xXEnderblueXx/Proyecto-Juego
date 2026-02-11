@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b6x752aode1t6"
+path="res://.godot/imported/misiones.dialogue-79d2331d5aef94f3ab0447a3ae950559.tres"
+
+[deps]
+
+source_file="res://Dialogues/misiones.dialogue"
+dest_files=["res://.godot/imported/misiones.dialogue-79d2331d5aef94f3ab0447a3ae950559.tres"]
+
+[params]
+
+defaults=true

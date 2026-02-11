@@ -1,0 +1,27 @@
+~ artesano_inicio
+if Global.mascara_completada:
+	Artesano: 
+	=> END
+
+if Global.inventario.has("papel_mache") and Global.inventario.has("pote_pintura"):
+	Artesano: ¡Veo que traes los materiales!
+	Artesano: Dame un momento...
+	do Global.fabricar_mascara()
+	Artesano: ¡Listo! Aquí tienes tu Máscara de 2 Cachos.
+else:
+	Artesano: Todavía te falta el Papel Maché o la Pintura.
+	Artesano: Vuelve cuando los tengas.
+=> END
+
+~ anciana_inicio
+if Global.traje_completado:
+	Anciana: Te ves muy elegante con ese traje rojo.
+	=> END
+
+if Global.inventario.has("velon"):
+	Anciana: ¡Gracias por el velón! Ahora puedo terminar tu ropa de diablo.
+	do Global.fabricar_traje()
+	Anciana: Aquí tienes tu Traje y tu Capa.
+else:
+	Anciana: No puedo terminar tu traje sin el velón para el altar.
+=> END

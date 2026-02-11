@@ -52,8 +52,8 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8tllg"]
 
-[sub_resource type="Animation" id="Animation_3g1ou"]
-resource_name = "sin_belon"
+[sub_resource type="Animation" id="Animation_qhh0h"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,8 +82,8 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_qhh0h"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_3g1ou"]
+resource_name = "sin_belon"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -274,6 +274,7 @@ libraries = {
 }
 
 [node name="Papel_Mache" type="Sprite2D" parent="."]
+position = Vector2(429, 163)
 texture = ExtResource("11_3g1ou")
 
 [node name="Pintura" type="Sprite2D" parent="."]

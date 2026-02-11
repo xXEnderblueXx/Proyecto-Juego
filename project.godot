@@ -18,10 +18,11 @@ config/features=PackedStringArray("4.5")
 
 CONFIGMANAGER="*res://scripts/ConfigManager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Global="*res://scenes/levels/global.gd"
+Global="*res://scenes/levels/Global.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

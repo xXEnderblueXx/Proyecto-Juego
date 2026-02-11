@@ -486,7 +486,7 @@ transitions = ["idle_combate", "jump", SubResource("AnimationNodeStateMachineTra
 graph_offset = Vector2(-7, 174)
 
 [node name="PlayerCharacter" type="PlayerCharacter" groups=["jugador"]]
-move_speed = 70.0
+move_speed = 0.0
 interaction_range = 200.0
 script = ExtResource("1_rpkbr")
 

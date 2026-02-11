@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cu83aoc0rttgp"]
+[gd_scene load_steps=26 format=4 uid="uid://cu83aoc0rttgp"]
 
 [ext_resource type="TileSet" uid="uid://clwx3suc5odgo" path="res://assets/art/backgrounds/suelopuebloyare.tres" id="1_bblsx"]
 [ext_resource type="Script" uid="uid://dyycwwtrwakyf" path="res://scenes/levels/mapapuebloyare.gd" id="1_lous1"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cbldatqvrv514" path="res://assets/art/ui/papel_mache.png" id="11_3g1ou"]
 [ext_resource type="Script" uid="uid://00nanbkyd8to" path="res://scenes/objects/CaminoALaIglesia.gd" id="11_qhh0h"]
 [ext_resource type="Texture2D" uid="uid://bjurl4qmmovvy" path="res://assets/art/ui/potes_de_pintura.png" id="12_lous1"]
+[ext_resource type="Script" uid="uid://btqb22dcq2qcy" path="res://scenes/levels/itemRecolectable.gd" id="14_3c40b"]
 
 [sub_resource type="Animation" id="Animation_eqd1q"]
 length = 0.001
@@ -105,6 +106,10 @@ _data = {
 &"con_belon": SubResource("Animation_lous1"),
 &"sin_belon": SubResource("Animation_3g1ou")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c40b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmg86"]
 
 [node name="Mapa" type="Node2D"]
 script = ExtResource("1_lous1")
@@ -246,7 +251,7 @@ libraries = {
 autoplay = "fade_out"
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("8_xyuxq")]
-position = Vector2(683, 208.99998)
+position = Vector2(-44, 1014)
 scale = Vector2(0.1, 0.1)
 
 [node name="Spawn_Desde_Artesano" type="Marker2D" parent="."]
@@ -289,8 +294,22 @@ libraries = {
 position = Vector2(621.99994, 1236)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("11_3g1ou")
+script = ExtResource("14_3c40b")
+nombre_del_objeto = "papel_mache"
+
+[node name="Area2D" type="Area2D" parent="Papel_Mache"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Papel_Mache/Area2D"]
+shape = SubResource("RectangleShape2D_3c40b")
 
 [node name="Pintura" type="Sprite2D" parent="."]
 position = Vector2(1553, 1334)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_lous1")
+script = ExtResource("14_3c40b")
+nombre_del_objeto = "pote_pintura"
+
+[node name="Area2D" type="Area2D" parent="Pintura"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pintura/Area2D"]
+shape = SubResource("RectangleShape2D_lmg86")

@@ -7,36 +7,40 @@ var is_dancing: bool = false # Nueva variable para dar prioridad al ritmo
 
 func _ready() -> void:
 	anim_player.animation_finished.connect(_on_animation_finished)
-	play_gameplay_loop()
+	decidir_siguiente_animacion()
 
 # --- NUEVA FUNCIÓN: BAILAR AL RITMO ---
-func bailar_direccion(direccion: String) -> void:
-	# Si el juego está pausado, ignoramos las notas
+func bailar_direccion(nombre_anim: String) -> void:
 	if is_game_paused: return
 	
-	# Detenemos el loop de idle para priorizar el paso de baile
 	is_dancing = true
 	
-	# direccion vendrá como "arriba", "abajo", etc.
-	var nombre_anim = "baile_" + direccion
 	if anim_player.has_animation(nombre_anim):
+		anim_player.stop() # Forzamos reinicio para marcar notas seguidas
 		anim_player.play(nombre_anim)
-
+		anim_player.seek(0.0, true)
+		
+		anim_player.speed_scale = 1.5
+	else:
+		push_error("EL CAPATAZ NO TIENE LA ANIMACIÓN: ", nombre_anim)
 func _on_animation_finished(anim_name: String) -> void:
 	if is_game_paused: return
 
-	# Si terminó una animación de baile, volvemos al estado base
-	if anim_name.begins_with("baile_"):
+	# Lista de tus animaciones rítmicas
+	var animaciones_ritmo = ["left", "right", "jump", "crouch", "interact","jojos"]
+
+	# Si terminó un paso de baile, salimos del estado de baile
+	if anim_name in animaciones_ritmo:
 		is_dancing = false
 		decidir_siguiente_animacion()
 	
-	# Solo si no estamos bailando notas, seguimos con el ciclo idle/jojos
+	# Si estábamos en reposo o haciendo la pose
 	elif not is_dancing:
 		if anim_name == "idle" or anim_name == "jojos":
 			decidir_siguiente_animacion()
 
 func decidir_siguiente_animacion() -> void:
-	if is_dancing: return # No interrumpir el baile rítmico
+	if is_dancing: return 
 	
 	if randf() < jojos_chance:
 		anim_player.play("jojos")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xibm1udbcw2l"
-path="res://.godot/imported/fondo provisional.png-691f75a90c0bf41e6f60156dfebe4ae3.ctex"
+path="res://.godot/imported/fondo provisional.png-5a29cffa410fc820e92691c1ca08908d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/backgrounds/menu/fondo provisional.png"
-dest_files=["res://.godot/imported/fondo provisional.png-691f75a90c0bf41e6f60156dfebe4ae3.ctex"]
+source_file="res://assets/art/backgrounds/Menu/fondo provisional.png"
+dest_files=["res://.godot/imported/fondo provisional.png-5a29cffa410fc820e92691c1ca08908d.ctex"]
 
 [params]
 

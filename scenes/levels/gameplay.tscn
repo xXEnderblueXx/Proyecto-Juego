@@ -442,7 +442,7 @@ stream = ExtResource("1_hxqbr")
 position = Vector2(274.99997, 522.99994)
 scale = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PrimerCapataz" type="Sprite2D" parent="."]
 position = Vector2(903.00006, 392)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_ekw5s")
@@ -450,9 +450,8 @@ hframes = 7
 vframes = 7
 frame = 43
 script = ExtResource("9_68k6r")
-jojos_chance = null
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PrimerCapataz"]
 libraries = {
 &"": SubResource("AnimationLibrary_8kurh")
 }

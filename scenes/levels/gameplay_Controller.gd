@@ -10,6 +10,8 @@ var current_combo: int = 0
 var score_per_note: float = 0.0
 var stats = {"Perfect": 0, "Excellent": 0, "Good": 0, "Meh": 0, "Miss": 0}
 var hp: float = 100.0
+var boss_beats: Array = []
+var base_healing: float = 2.0
 
 # --- REFERENCIAS ---
 @onready var rhythm_manager = $RhythmManager
@@ -67,7 +69,18 @@ func _on_menu_pressed():
 func _process(delta):
 	if current_state == GameState.PLAYING:
 		var song_time = music_player.get_playback_position()
-		
+		# --- NUEVO SISTEMA: EL CAPATAZ LEE SU AGENDA ---
+		# Mientras haya pasos agendados, revisamos si el tiempo de la canción 
+		# ya alcanzó o superó el tiempo del primer paso anotado.
+		while boss_beats.size() > 0 and song_time >= boss_beats[0]["tiempo"]:
+			# Le decimos al capataz que baile
+			var paso_actual = boss_beats.pop_front()
+			
+			print("Capataz ejecuta ->", paso_actual["animacion"], " | Tiempo Música: ", song_time, " | Hit esperado: ", paso_actual["tiempo"])
+			capataz.bailar_direccion(boss_beats[0]["animacion"])
+			# Borramos este paso de la agenda para que no lo repita y pase al siguiente
+			boss_beats.pop_front()
+			
 		# USAMOS EL CENTRO PARA EL DESTINO EN X
 		var target_center_x = get_hitzone_center().x
 		
@@ -88,11 +101,22 @@ func _on_difficulty_chosen(full_path: String):
 	# 1. Cargamos el nivel en el Manager de C++
 	rhythm_manager.load_level(full_path) 
 	
+	# --- AJUSTE DE DIFICULTAD ---
+	if "facil" in full_path:
+		base_healing = 8.0  # Cura muchísimo por nota
+	elif "medio" in full_path:
+		base_healing = 4.0  # Cura balanceado
+	elif "dificil" in full_path:
+		base_healing = 2.0  # Cura poco (Hardcore)
+	else: # Para Yare u otros
+		base_healing = 1.0  # Casi no cura
+	
 	# 2. REINICIO DE ESTADO (Para empezar limpio cada vez)
 	current_score = 0.0
 	current_combo = 0
 	hp = 100.0
 	stats = {"Perfect": 0, "Excellent": 0, "Good": 0, "Meh": 0, "Miss": 0}
+	boss_beats.clear() 
 	
 	# Actualizamos la UI inmediatamente
 	$UI_Layer/HUD/ScoreLabel.text = "0000000"
@@ -109,14 +133,15 @@ func _on_difficulty_chosen(full_path: String):
 	change_state(GameState.PLAYING)
 
 func _input(event):
-# Detectar Tecla Pausa (Esc)
+	# Detectar Tecla Pausa
 	if event.is_action_pressed("ui_cancel"):
 		if current_state == GameState.PLAYING:
 			change_state(GameState.PAUSED)
 		elif current_state == GameState.PAUSED:
 			change_state(GameState.PLAYING)
 
-	if current_state == GameState.PLAYING and event is InputEventKey and event.pressed and not event.is_echo():
+	# Eliminamos "event is InputEventKey" para permitir Gamepads
+	if current_state == GameState.PLAYING and event.is_pressed() and not event.is_echo():
 		var type = _get_input_type(event)
 		if type != -1: _verificar_hit(type)
 
@@ -144,7 +169,8 @@ func _aplicar_resultado(rating: String, multiplier: float, note: Node):
 		current_score += score_per_note * multiplier
 		current_combo += 1
 		stats[rating] += 1
-		var recovery = 2.0 * multiplier
+		
+		var recovery = base_healing * multiplier
 		hp = min(hp + recovery, 100.0)
 		
 		# Si es tecla E (tipo 4), podrías disparar algo especial aquí
@@ -165,12 +191,33 @@ func _on_note_spawned(type, speed, hit_time, _id):
 	n.setup(type, speed, hit_time)
 	n.hit_time = hit_time
 	n.position.y = hit_zone.position.y
-	capataz.bailar_direccion(tipo_nota)
+	
+	# 1. FORZAMOS QUE EL TIPO SEA UN ENTERO (Cura el problema de C++ a GDScript)
+	var tipo_entero = int(type)
+	var nombre_anim = ""
+	
+	# 2. Buscamos la animación usando el entero puro
+	match tipo_entero:
+		0: nombre_anim = "left"
+		1: nombre_anim = "crouch" 
+		2: nombre_anim = "jump"   
+		3: nombre_anim = "jojos"
+		4: nombre_anim = "interact" 
+		_: 
+			# CHIVATO DE EMERGENCIA: Si C++ manda algo distinto a 0,1,2,3,4
+			print("⚠️ ALERTA: C++ envió una nota con tipo desconocido: ", type)
+	
+	if nombre_anim != "":
+		# Agendamos
+		boss_beats.append({"tiempo": hit_time, "animacion": nombre_anim})
+		# CHIVATO DE ÉXITO
+		print("📝 AGENDADO: ", nombre_anim, " para el segundo ", hit_time)
 func _get_input_type(event):
-	if event.is_action_pressed("ui_left"): return 0
-	if event.is_action_pressed("ui_down"): return 1
-	if event.is_action_pressed("ui_up"): return 2
-	if event.is_action_pressed("ui_right"): return 3
+	# Agrupamos las acciones por defecto (ui_) con tus acciones personalizadas (move_)
+	if event.is_action_pressed("ui_left") or event.is_action_pressed("move_left"): return 0
+	if event.is_action_pressed("ui_down") or event.is_action_pressed("move_down"): return 1
+	if event.is_action_pressed("ui_up") or event.is_action_pressed("move_up"): return 2
+	if event.is_action_pressed("ui_right") or event.is_action_pressed("move_right"): return 3
 	if event.is_action_pressed("interact"): return 4
 	return -1
 

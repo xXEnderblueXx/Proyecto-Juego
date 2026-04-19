@@ -14,7 +14,7 @@ var dificultades = {
 	"Facil": "res://scenes/levels/recordings/boss_facil.json",
 	"Medio": "res://scenes/levels/recordings/boss_medio.json",
 	"Dificil": "res://scenes/levels/recordings/boss_dificil.json",
-	"Yare" "res://scenes/levels/recordings/boss_yare.json"
+	"Yare": "res://scenes/levels/recordings/boss_yare.json"
 }
 
 func _ready():
